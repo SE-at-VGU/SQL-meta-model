@@ -18,7 +18,11 @@ limitations under the License.
 
 package org.vgu.se.sql.parser;
 
+import java.io.BufferedReader;
+import java.io.FileInputStream;
 import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.util.Collections;
 import java.util.Map;
 
@@ -36,11 +40,12 @@ import net.sf.jsqlparser.statement.Statement;
 
 public class SQLParser {
     private static SqlFactory factory = SqlFactory.eINSTANCE;
-    
+    final static String dirPath = System.getProperty("java.io.tmpdir");
+
     public static Statement transform(EStatement statementXMI) {
         return J2XMI.transform(statementXMI);
     }
-    
+
     public static EStatement transform(Statement statement) {
         return XMI2J.transform(statement);
     }
@@ -54,15 +59,34 @@ public class SQLParser {
         factory.eClass();
 
         ResourceSet resSet = new ResourceSetImpl();
-        Resource resource = resSet
-            .createResource(URI.createFileURI(fileName.concat(".xmi")));
+        Resource resource = resSet.createResource(URI.createFileURI(
+            dirPath.concat("//").concat(fileName).concat(".xmi")));
         resource.getContents().add(statement);
         resource.save(Collections.EMPTY_MAP);
 
         return;
     }
 
-    public static EStatement loadEStatement(String filePath)
+    public static String outputEStatementAsXMI(EStatement statement)
+        throws IOException {
+        saveEStatement("dummy", statement);
+        InputStream is = new FileInputStream(
+            dirPath.concat("//").concat("dummy.xmi"));
+        @SuppressWarnings("resource")
+        BufferedReader buf = new BufferedReader(new InputStreamReader(is));
+
+        String line = buf.readLine();
+        StringBuilder sb = new StringBuilder();
+
+        while ((line = buf.readLine()) != null) {
+            sb.append(line).append(" ");
+        }
+
+        String fileAsString = sb.toString();
+        return fileAsString;
+    }
+
+    public static EStatement loadEStatement(String filePathWithoutSuffix)
         throws IOException {
         // Initialize the model
         factory.eClass();
@@ -75,7 +99,8 @@ public class SQLParser {
         ResourceSet resSet = new ResourceSetImpl();
 
         // Get the resource
-        Resource resource = resSet.getResource(URI.createFileURI(filePath),
+        Resource resource = resSet.getResource(URI.createFileURI(
+            dirPath.concat("//").concat(filePathWithoutSuffix).concat(".xmi")),
             true);
 
         // This is for loading proxy resources

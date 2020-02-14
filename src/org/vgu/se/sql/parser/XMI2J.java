@@ -145,9 +145,11 @@ public class XMI2J {
     private static Collection<? extends EJoin> transformJoins(
         List<Join> joins) {
         List<EJoin> joinsXMI = new ArrayList<EJoin>();
-        for (Join join : joins) {
-            EJoin joinXMI = transformJoin(join);
-            joinsXMI.add(joinXMI);
+        if(joins != null) {
+            for (Join join : joins) {
+                EJoin joinXMI = transformJoin(join);
+                joinsXMI.add(joinXMI);
+            }
         }
         return joinsXMI;
     }
@@ -183,9 +185,11 @@ public class XMI2J {
     private static Collection<? extends ESelectItem> transformSelectItems(
         List<SelectItem> selectItems) {
         List<ESelectItem> selectItemsXMI = new ArrayList<ESelectItem>();
-        for (SelectItem selectItem : selectItems) {
-            ESelectItem selectItemXMI = transformSelectItem(selectItem);
-            selectItemsXMI.add(selectItemXMI);
+        if(selectItems != null) { 
+            for (SelectItem selectItem : selectItems) {
+                ESelectItem selectItemXMI = transformSelectItem(selectItem);
+                selectItemsXMI.add(selectItemXMI);
+            }
         }
         return selectItemsXMI;
     }
@@ -263,9 +267,11 @@ public class XMI2J {
     private static Collection<? extends EWhenClause> transformWhenClauses(
         List<WhenClause> whenClauses) {
         List<EWhenClause> whenClausesXMI = new ArrayList<EWhenClause>();
-        for (WhenClause whenClause : whenClauses) {
-            EWhenClause whenClauseXMI = transformWhenClause(whenClause);
-            whenClausesXMI.add(whenClauseXMI);
+        if(whenClauses != null) {
+            for (WhenClause whenClause : whenClauses) {
+                EWhenClause whenClauseXMI = transformWhenClause(whenClause);
+                whenClausesXMI.add(whenClauseXMI);
+            }
         }
         return whenClausesXMI;
     }
@@ -324,9 +330,11 @@ public class XMI2J {
     private static Collection<? extends EExpression> transformExpressions(
         List<Expression> expressions) {
         List<EExpression> expressionsXMI = new ArrayList<EExpression>();
-        for (Expression expression : expressions) {
-            EExpression expressionXMI = transformExpression(expression);
-            expressionsXMI.add(expressionXMI);
+        if(expressions != null) {    
+            for (Expression expression : expressions) {
+                EExpression expressionXMI = transformExpression(expression);
+                expressionsXMI.add(expressionXMI);
+            }
         }
         return expressionsXMI;
     }
