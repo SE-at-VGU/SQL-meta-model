@@ -20,22 +20,22 @@ package org.vgu.se.sql;
  */
 public interface ESelect extends EStatement {
     /**
-     * Returns the value of the '<em><b>Select Body</b></em>' reference.
+     * Returns the value of the '<em><b>Select Body</b></em>' containment reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return the value of the '<em>Select Body</em>' reference.
+     * @return the value of the '<em>Select Body</em>' containment reference.
      * @see #setSelectBody(ESelectBody)
      * @see org.vgu.se.sql.SqlPackage#getESelect_SelectBody()
-     * @model required="true"
+     * @model containment="true" required="true"
      * @generated
      */
     ESelectBody getSelectBody();
 
     /**
-     * Sets the value of the '{@link org.vgu.se.sql.ESelect#getSelectBody <em>Select Body</em>}' reference.
+     * Sets the value of the '{@link org.vgu.se.sql.ESelect#getSelectBody <em>Select Body</em>}' containment reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @param value the new value of the '<em>Select Body</em>' reference.
+     * @param value the new value of the '<em>Select Body</em>' containment reference.
      * @see #getSelectBody()
      * @generated
      */

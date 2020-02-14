@@ -4,6 +4,7 @@ package org.vgu.se.sql.impl;
 
 import org.eclipse.emf.common.notify.Notification;
 
+import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
@@ -262,7 +263,7 @@ public class EJoinImpl extends MinimalEObjectImpl.Container implements EJoin {
     protected boolean apply = APPLY_EDEFAULT;
 
     /**
-     * The cached value of the '{@link #getRightItem() <em>Right Item</em>}' reference.
+     * The cached value of the '{@link #getRightItem() <em>Right Item</em>}' containment reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @see #getRightItem()
@@ -272,7 +273,7 @@ public class EJoinImpl extends MinimalEObjectImpl.Container implements EJoin {
     protected EFromItem rightItem;
 
     /**
-     * The cached value of the '{@link #getOnExpression() <em>On Expression</em>}' reference.
+     * The cached value of the '{@link #getOnExpression() <em>On Expression</em>}' containment reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @see #getOnExpression()
@@ -571,15 +572,6 @@ public class EJoinImpl extends MinimalEObjectImpl.Container implements EJoin {
      */
     @Override
     public EFromItem getRightItem() {
-        if (rightItem != null && rightItem.eIsProxy()) {
-            InternalEObject oldRightItem = (InternalEObject) rightItem;
-            rightItem = (EFromItem) eResolveProxy(oldRightItem);
-            if (rightItem != oldRightItem) {
-                if (eNotificationRequired())
-                    eNotify(new ENotificationImpl(this, Notification.RESOLVE,
-                        SqlPackage.EJOIN__RIGHT_ITEM, oldRightItem, rightItem));
-            }
-        }
         return rightItem;
     }
 
@@ -588,8 +580,20 @@ public class EJoinImpl extends MinimalEObjectImpl.Container implements EJoin {
      * <!-- end-user-doc -->
      * @generated
      */
-    public EFromItem basicGetRightItem() {
-        return rightItem;
+    public NotificationChain basicSetRightItem(EFromItem newRightItem,
+        NotificationChain msgs) {
+        EFromItem oldRightItem = rightItem;
+        rightItem = newRightItem;
+        if (eNotificationRequired()) {
+            ENotificationImpl notification = new ENotificationImpl(this,
+                Notification.SET, SqlPackage.EJOIN__RIGHT_ITEM, oldRightItem,
+                newRightItem);
+            if (msgs == null)
+                msgs = notification;
+            else
+                msgs.add(notification);
+        }
+        return msgs;
     }
 
     /**
@@ -599,11 +603,22 @@ public class EJoinImpl extends MinimalEObjectImpl.Container implements EJoin {
      */
     @Override
     public void setRightItem(EFromItem newRightItem) {
-        EFromItem oldRightItem = rightItem;
-        rightItem = newRightItem;
-        if (eNotificationRequired())
+        if (newRightItem != rightItem) {
+            NotificationChain msgs = null;
+            if (rightItem != null)
+                msgs = ((InternalEObject) rightItem).eInverseRemove(this,
+                    EOPPOSITE_FEATURE_BASE - SqlPackage.EJOIN__RIGHT_ITEM, null,
+                    msgs);
+            if (newRightItem != null)
+                msgs = ((InternalEObject) newRightItem).eInverseAdd(this,
+                    EOPPOSITE_FEATURE_BASE - SqlPackage.EJOIN__RIGHT_ITEM, null,
+                    msgs);
+            msgs = basicSetRightItem(newRightItem, msgs);
+            if (msgs != null)
+                msgs.dispatch();
+        } else if (eNotificationRequired())
             eNotify(new ENotificationImpl(this, Notification.SET,
-                SqlPackage.EJOIN__RIGHT_ITEM, oldRightItem, rightItem));
+                SqlPackage.EJOIN__RIGHT_ITEM, newRightItem, newRightItem));
     }
 
     /**
@@ -613,16 +628,6 @@ public class EJoinImpl extends MinimalEObjectImpl.Container implements EJoin {
      */
     @Override
     public EExpression getOnExpression() {
-        if (onExpression != null && onExpression.eIsProxy()) {
-            InternalEObject oldOnExpression = (InternalEObject) onExpression;
-            onExpression = (EExpression) eResolveProxy(oldOnExpression);
-            if (onExpression != oldOnExpression) {
-                if (eNotificationRequired())
-                    eNotify(new ENotificationImpl(this, Notification.RESOLVE,
-                        SqlPackage.EJOIN__ON_EXPRESSION, oldOnExpression,
-                        onExpression));
-            }
-        }
         return onExpression;
     }
 
@@ -631,8 +636,20 @@ public class EJoinImpl extends MinimalEObjectImpl.Container implements EJoin {
      * <!-- end-user-doc -->
      * @generated
      */
-    public EExpression basicGetOnExpression() {
-        return onExpression;
+    public NotificationChain basicSetOnExpression(EExpression newOnExpression,
+        NotificationChain msgs) {
+        EExpression oldOnExpression = onExpression;
+        onExpression = newOnExpression;
+        if (eNotificationRequired()) {
+            ENotificationImpl notification = new ENotificationImpl(this,
+                Notification.SET, SqlPackage.EJOIN__ON_EXPRESSION,
+                oldOnExpression, newOnExpression);
+            if (msgs == null)
+                msgs = notification;
+            else
+                msgs.add(notification);
+        }
+        return msgs;
     }
 
     /**
@@ -642,12 +659,40 @@ public class EJoinImpl extends MinimalEObjectImpl.Container implements EJoin {
      */
     @Override
     public void setOnExpression(EExpression newOnExpression) {
-        EExpression oldOnExpression = onExpression;
-        onExpression = newOnExpression;
-        if (eNotificationRequired())
+        if (newOnExpression != onExpression) {
+            NotificationChain msgs = null;
+            if (onExpression != null)
+                msgs = ((InternalEObject) onExpression).eInverseRemove(this,
+                    EOPPOSITE_FEATURE_BASE - SqlPackage.EJOIN__ON_EXPRESSION,
+                    null, msgs);
+            if (newOnExpression != null)
+                msgs = ((InternalEObject) newOnExpression).eInverseAdd(this,
+                    EOPPOSITE_FEATURE_BASE - SqlPackage.EJOIN__ON_EXPRESSION,
+                    null, msgs);
+            msgs = basicSetOnExpression(newOnExpression, msgs);
+            if (msgs != null)
+                msgs.dispatch();
+        } else if (eNotificationRequired())
             eNotify(new ENotificationImpl(this, Notification.SET,
-                SqlPackage.EJOIN__ON_EXPRESSION, oldOnExpression,
-                onExpression));
+                SqlPackage.EJOIN__ON_EXPRESSION, newOnExpression,
+                newOnExpression));
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public NotificationChain eInverseRemove(InternalEObject otherEnd,
+        int featureID, NotificationChain msgs) {
+        switch (featureID) {
+        case SqlPackage.EJOIN__RIGHT_ITEM:
+            return basicSetRightItem(null, msgs);
+        case SqlPackage.EJOIN__ON_EXPRESSION:
+            return basicSetOnExpression(null, msgs);
+        }
+        return super.eInverseRemove(otherEnd, featureID, msgs);
     }
 
     /**
@@ -681,13 +726,9 @@ public class EJoinImpl extends MinimalEObjectImpl.Container implements EJoin {
         case SqlPackage.EJOIN__APPLY:
             return isApply();
         case SqlPackage.EJOIN__RIGHT_ITEM:
-            if (resolve)
-                return getRightItem();
-            return basicGetRightItem();
+            return getRightItem();
         case SqlPackage.EJOIN__ON_EXPRESSION:
-            if (resolve)
-                return getOnExpression();
-            return basicGetOnExpression();
+            return getOnExpression();
         }
         return super.eGet(featureID, resolve, coreType);
     }

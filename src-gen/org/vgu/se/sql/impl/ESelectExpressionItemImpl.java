@@ -4,6 +4,7 @@ package org.vgu.se.sql.impl;
 
 import org.eclipse.emf.common.notify.Notification;
 
+import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
@@ -32,7 +33,7 @@ import org.vgu.se.sql.SqlPackage;
 public class ESelectExpressionItemImpl extends MinimalEObjectImpl.Container
     implements ESelectExpressionItem {
     /**
-     * The cached value of the '{@link #getAlias() <em>Alias</em>}' reference.
+     * The cached value of the '{@link #getAlias() <em>Alias</em>}' containment reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @see #getAlias()
@@ -42,7 +43,7 @@ public class ESelectExpressionItemImpl extends MinimalEObjectImpl.Container
     protected EAlias alias;
 
     /**
-     * The cached value of the '{@link #getExpression() <em>Expression</em>}' reference.
+     * The cached value of the '{@link #getExpression() <em>Expression</em>}' containment reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @see #getExpression()
@@ -77,16 +78,6 @@ public class ESelectExpressionItemImpl extends MinimalEObjectImpl.Container
      */
     @Override
     public EAlias getAlias() {
-        if (alias != null && alias.eIsProxy()) {
-            InternalEObject oldAlias = (InternalEObject) alias;
-            alias = (EAlias) eResolveProxy(oldAlias);
-            if (alias != oldAlias) {
-                if (eNotificationRequired())
-                    eNotify(new ENotificationImpl(this, Notification.RESOLVE,
-                        SqlPackage.ESELECT_EXPRESSION_ITEM__ALIAS, oldAlias,
-                        alias));
-            }
-        }
         return alias;
     }
 
@@ -95,8 +86,20 @@ public class ESelectExpressionItemImpl extends MinimalEObjectImpl.Container
      * <!-- end-user-doc -->
      * @generated
      */
-    public EAlias basicGetAlias() {
-        return alias;
+    public NotificationChain basicSetAlias(EAlias newAlias,
+        NotificationChain msgs) {
+        EAlias oldAlias = alias;
+        alias = newAlias;
+        if (eNotificationRequired()) {
+            ENotificationImpl notification = new ENotificationImpl(this,
+                Notification.SET, SqlPackage.ESELECT_EXPRESSION_ITEM__ALIAS,
+                oldAlias, newAlias);
+            if (msgs == null)
+                msgs = notification;
+            else
+                msgs.add(notification);
+        }
+        return msgs;
     }
 
     /**
@@ -106,11 +109,24 @@ public class ESelectExpressionItemImpl extends MinimalEObjectImpl.Container
      */
     @Override
     public void setAlias(EAlias newAlias) {
-        EAlias oldAlias = alias;
-        alias = newAlias;
-        if (eNotificationRequired())
+        if (newAlias != alias) {
+            NotificationChain msgs = null;
+            if (alias != null)
+                msgs = ((InternalEObject) alias).eInverseRemove(this,
+                    EOPPOSITE_FEATURE_BASE
+                        - SqlPackage.ESELECT_EXPRESSION_ITEM__ALIAS,
+                    null, msgs);
+            if (newAlias != null)
+                msgs = ((InternalEObject) newAlias).eInverseAdd(this,
+                    EOPPOSITE_FEATURE_BASE
+                        - SqlPackage.ESELECT_EXPRESSION_ITEM__ALIAS,
+                    null, msgs);
+            msgs = basicSetAlias(newAlias, msgs);
+            if (msgs != null)
+                msgs.dispatch();
+        } else if (eNotificationRequired())
             eNotify(new ENotificationImpl(this, Notification.SET,
-                SqlPackage.ESELECT_EXPRESSION_ITEM__ALIAS, oldAlias, alias));
+                SqlPackage.ESELECT_EXPRESSION_ITEM__ALIAS, newAlias, newAlias));
     }
 
     /**
@@ -120,16 +136,6 @@ public class ESelectExpressionItemImpl extends MinimalEObjectImpl.Container
      */
     @Override
     public EExpression getExpression() {
-        if (expression != null && expression.eIsProxy()) {
-            InternalEObject oldExpression = (InternalEObject) expression;
-            expression = (EExpression) eResolveProxy(oldExpression);
-            if (expression != oldExpression) {
-                if (eNotificationRequired())
-                    eNotify(new ENotificationImpl(this, Notification.RESOLVE,
-                        SqlPackage.ESELECT_EXPRESSION_ITEM__EXPRESSION,
-                        oldExpression, expression));
-            }
-        }
         return expression;
     }
 
@@ -138,8 +144,21 @@ public class ESelectExpressionItemImpl extends MinimalEObjectImpl.Container
      * <!-- end-user-doc -->
      * @generated
      */
-    public EExpression basicGetExpression() {
-        return expression;
+    public NotificationChain basicSetExpression(EExpression newExpression,
+        NotificationChain msgs) {
+        EExpression oldExpression = expression;
+        expression = newExpression;
+        if (eNotificationRequired()) {
+            ENotificationImpl notification = new ENotificationImpl(this,
+                Notification.SET,
+                SqlPackage.ESELECT_EXPRESSION_ITEM__EXPRESSION, oldExpression,
+                newExpression);
+            if (msgs == null)
+                msgs = notification;
+            else
+                msgs.add(notification);
+        }
+        return msgs;
     }
 
     /**
@@ -149,12 +168,42 @@ public class ESelectExpressionItemImpl extends MinimalEObjectImpl.Container
      */
     @Override
     public void setExpression(EExpression newExpression) {
-        EExpression oldExpression = expression;
-        expression = newExpression;
-        if (eNotificationRequired())
+        if (newExpression != expression) {
+            NotificationChain msgs = null;
+            if (expression != null)
+                msgs = ((InternalEObject) expression).eInverseRemove(this,
+                    EOPPOSITE_FEATURE_BASE
+                        - SqlPackage.ESELECT_EXPRESSION_ITEM__EXPRESSION,
+                    null, msgs);
+            if (newExpression != null)
+                msgs = ((InternalEObject) newExpression).eInverseAdd(this,
+                    EOPPOSITE_FEATURE_BASE
+                        - SqlPackage.ESELECT_EXPRESSION_ITEM__EXPRESSION,
+                    null, msgs);
+            msgs = basicSetExpression(newExpression, msgs);
+            if (msgs != null)
+                msgs.dispatch();
+        } else if (eNotificationRequired())
             eNotify(new ENotificationImpl(this, Notification.SET,
-                SqlPackage.ESELECT_EXPRESSION_ITEM__EXPRESSION, oldExpression,
-                expression));
+                SqlPackage.ESELECT_EXPRESSION_ITEM__EXPRESSION, newExpression,
+                newExpression));
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public NotificationChain eInverseRemove(InternalEObject otherEnd,
+        int featureID, NotificationChain msgs) {
+        switch (featureID) {
+        case SqlPackage.ESELECT_EXPRESSION_ITEM__ALIAS:
+            return basicSetAlias(null, msgs);
+        case SqlPackage.ESELECT_EXPRESSION_ITEM__EXPRESSION:
+            return basicSetExpression(null, msgs);
+        }
+        return super.eInverseRemove(otherEnd, featureID, msgs);
     }
 
     /**
@@ -166,13 +215,9 @@ public class ESelectExpressionItemImpl extends MinimalEObjectImpl.Container
     public Object eGet(int featureID, boolean resolve, boolean coreType) {
         switch (featureID) {
         case SqlPackage.ESELECT_EXPRESSION_ITEM__ALIAS:
-            if (resolve)
-                return getAlias();
-            return basicGetAlias();
+            return getAlias();
         case SqlPackage.ESELECT_EXPRESSION_ITEM__EXPRESSION:
-            if (resolve)
-                return getExpression();
-            return basicGetExpression();
+            return getExpression();
         }
         return super.eGet(featureID, resolve, coreType);
     }

@@ -197,6 +197,51 @@ public class SqlAdapterFactory extends AdapterFactoryImpl {
         }
 
         @Override
+        public Adapter caseELongValue(ELongValue object) {
+            return createELongValueAdapter();
+        }
+
+        @Override
+        public Adapter caseENullValue(ENullValue object) {
+            return createENullValueAdapter();
+        }
+
+        @Override
+        public Adapter caseEIsNullExpression(EIsNullExpression object) {
+            return createEIsNullExpressionAdapter();
+        }
+
+        @Override
+        public Adapter caseEFunction(EFunction object) {
+            return createEFunctionAdapter();
+        }
+
+        @Override
+        public Adapter caseEColumn(EColumn object) {
+            return createEColumnAdapter();
+        }
+
+        @Override
+        public Adapter caseECaseExpression(ECaseExpression object) {
+            return createECaseExpressionAdapter();
+        }
+
+        @Override
+        public Adapter caseEWhenClause(EWhenClause object) {
+            return createEWhenClauseAdapter();
+        }
+
+        @Override
+        public Adapter caseEStringValue(EStringValue object) {
+            return createEStringValueAdapter();
+        }
+
+        @Override
+        public Adapter caseEExpressionList(EExpressionList object) {
+            return createEExpressionListAdapter();
+        }
+
+        @Override
         public Adapter defaultCase(EObject object) {
             return createEObjectAdapter();
         }
@@ -576,6 +621,132 @@ public class SqlAdapterFactory extends AdapterFactoryImpl {
      * @generated
      */
     public Adapter createENotExpressionAdapter() {
+        return null;
+    }
+
+    /**
+     * Creates a new adapter for an object of class '{@link org.vgu.se.sql.ELongValue <em>ELong Value</em>}'.
+     * <!-- begin-user-doc -->
+     * This default implementation returns null so that we can easily ignore cases;
+     * it's useful to ignore a case when inheritance will catch all the cases anyway.
+     * <!-- end-user-doc -->
+     * @return the new adapter.
+     * @see org.vgu.se.sql.ELongValue
+     * @generated
+     */
+    public Adapter createELongValueAdapter() {
+        return null;
+    }
+
+    /**
+     * Creates a new adapter for an object of class '{@link org.vgu.se.sql.ENullValue <em>ENull Value</em>}'.
+     * <!-- begin-user-doc -->
+     * This default implementation returns null so that we can easily ignore cases;
+     * it's useful to ignore a case when inheritance will catch all the cases anyway.
+     * <!-- end-user-doc -->
+     * @return the new adapter.
+     * @see org.vgu.se.sql.ENullValue
+     * @generated
+     */
+    public Adapter createENullValueAdapter() {
+        return null;
+    }
+
+    /**
+     * Creates a new adapter for an object of class '{@link org.vgu.se.sql.EIsNullExpression <em>EIs Null Expression</em>}'.
+     * <!-- begin-user-doc -->
+     * This default implementation returns null so that we can easily ignore cases;
+     * it's useful to ignore a case when inheritance will catch all the cases anyway.
+     * <!-- end-user-doc -->
+     * @return the new adapter.
+     * @see org.vgu.se.sql.EIsNullExpression
+     * @generated
+     */
+    public Adapter createEIsNullExpressionAdapter() {
+        return null;
+    }
+
+    /**
+     * Creates a new adapter for an object of class '{@link org.vgu.se.sql.EFunction <em>EFunction</em>}'.
+     * <!-- begin-user-doc -->
+     * This default implementation returns null so that we can easily ignore cases;
+     * it's useful to ignore a case when inheritance will catch all the cases anyway.
+     * <!-- end-user-doc -->
+     * @return the new adapter.
+     * @see org.vgu.se.sql.EFunction
+     * @generated
+     */
+    public Adapter createEFunctionAdapter() {
+        return null;
+    }
+
+    /**
+     * Creates a new adapter for an object of class '{@link org.vgu.se.sql.EColumn <em>EColumn</em>}'.
+     * <!-- begin-user-doc -->
+     * This default implementation returns null so that we can easily ignore cases;
+     * it's useful to ignore a case when inheritance will catch all the cases anyway.
+     * <!-- end-user-doc -->
+     * @return the new adapter.
+     * @see org.vgu.se.sql.EColumn
+     * @generated
+     */
+    public Adapter createEColumnAdapter() {
+        return null;
+    }
+
+    /**
+     * Creates a new adapter for an object of class '{@link org.vgu.se.sql.ECaseExpression <em>ECase Expression</em>}'.
+     * <!-- begin-user-doc -->
+     * This default implementation returns null so that we can easily ignore cases;
+     * it's useful to ignore a case when inheritance will catch all the cases anyway.
+     * <!-- end-user-doc -->
+     * @return the new adapter.
+     * @see org.vgu.se.sql.ECaseExpression
+     * @generated
+     */
+    public Adapter createECaseExpressionAdapter() {
+        return null;
+    }
+
+    /**
+     * Creates a new adapter for an object of class '{@link org.vgu.se.sql.EWhenClause <em>EWhen Clause</em>}'.
+     * <!-- begin-user-doc -->
+     * This default implementation returns null so that we can easily ignore cases;
+     * it's useful to ignore a case when inheritance will catch all the cases anyway.
+     * <!-- end-user-doc -->
+     * @return the new adapter.
+     * @see org.vgu.se.sql.EWhenClause
+     * @generated
+     */
+    public Adapter createEWhenClauseAdapter() {
+        return null;
+    }
+
+    /**
+     * Creates a new adapter for an object of class '{@link org.vgu.se.sql.EStringValue <em>EString Value</em>}'.
+     * <!-- begin-user-doc -->
+     * This default implementation returns null so that we can easily ignore cases;
+     * it's useful to ignore a case when inheritance will catch all the cases anyway.
+     * <!-- end-user-doc -->
+     * @return the new adapter.
+     * @see org.vgu.se.sql.EStringValue
+     * @generated
+     */
+    public Adapter createEStringValueAdapter() {
+        return null;
+    }
+
+    /**
+     * Creates a new adapter for an object of class '{@link org.vgu.se.sql.EExpressionList <em>EExpression List</em>}'.
+     * <!-- begin-user-doc -->
+     * This default implementation returns null so that we can easily ignore cases;
+     * it's useful to ignore a case when inheritance will catch all the cases anyway.
+     * <!-- end-user-doc -->
+     * @return the new adapter.
+     * @see org.vgu.se.sql.EExpressionList
+     * @generated
+     */
+    public Adapter createEExpressionListAdapter() {
         return null;
     }
 

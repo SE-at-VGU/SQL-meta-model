@@ -300,6 +300,8 @@ public class SqlSwitch<T> extends Switch<T> {
             if (result == null)
                 result = caseEFromItem(eSubSelect);
             if (result == null)
+                result = caseEExpression(eSubSelect);
+            if (result == null)
                 result = defaultCase(theEObject);
             return result;
         }
@@ -308,6 +310,85 @@ public class SqlSwitch<T> extends Switch<T> {
             T result = caseENotExpression(eNotExpression);
             if (result == null)
                 result = caseEExpression(eNotExpression);
+            if (result == null)
+                result = defaultCase(theEObject);
+            return result;
+        }
+        case SqlPackage.ELONG_VALUE: {
+            ELongValue eLongValue = (ELongValue) theEObject;
+            T result = caseELongValue(eLongValue);
+            if (result == null)
+                result = caseEExpression(eLongValue);
+            if (result == null)
+                result = defaultCase(theEObject);
+            return result;
+        }
+        case SqlPackage.ENULL_VALUE: {
+            ENullValue eNullValue = (ENullValue) theEObject;
+            T result = caseENullValue(eNullValue);
+            if (result == null)
+                result = caseEExpression(eNullValue);
+            if (result == null)
+                result = defaultCase(theEObject);
+            return result;
+        }
+        case SqlPackage.EIS_NULL_EXPRESSION: {
+            EIsNullExpression eIsNullExpression = (EIsNullExpression) theEObject;
+            T result = caseEIsNullExpression(eIsNullExpression);
+            if (result == null)
+                result = caseEExpression(eIsNullExpression);
+            if (result == null)
+                result = defaultCase(theEObject);
+            return result;
+        }
+        case SqlPackage.EFUNCTION: {
+            EFunction eFunction = (EFunction) theEObject;
+            T result = caseEFunction(eFunction);
+            if (result == null)
+                result = caseEExpression(eFunction);
+            if (result == null)
+                result = defaultCase(theEObject);
+            return result;
+        }
+        case SqlPackage.ECOLUMN: {
+            EColumn eColumn = (EColumn) theEObject;
+            T result = caseEColumn(eColumn);
+            if (result == null)
+                result = caseEExpression(eColumn);
+            if (result == null)
+                result = defaultCase(theEObject);
+            return result;
+        }
+        case SqlPackage.ECASE_EXPRESSION: {
+            ECaseExpression eCaseExpression = (ECaseExpression) theEObject;
+            T result = caseECaseExpression(eCaseExpression);
+            if (result == null)
+                result = caseEExpression(eCaseExpression);
+            if (result == null)
+                result = defaultCase(theEObject);
+            return result;
+        }
+        case SqlPackage.EWHEN_CLAUSE: {
+            EWhenClause eWhenClause = (EWhenClause) theEObject;
+            T result = caseEWhenClause(eWhenClause);
+            if (result == null)
+                result = caseEExpression(eWhenClause);
+            if (result == null)
+                result = defaultCase(theEObject);
+            return result;
+        }
+        case SqlPackage.ESTRING_VALUE: {
+            EStringValue eStringValue = (EStringValue) theEObject;
+            T result = caseEStringValue(eStringValue);
+            if (result == null)
+                result = caseEExpression(eStringValue);
+            if (result == null)
+                result = defaultCase(theEObject);
+            return result;
+        }
+        case SqlPackage.EEXPRESSION_LIST: {
+            EExpressionList eExpressionList = (EExpressionList) theEObject;
+            T result = caseEExpressionList(eExpressionList);
             if (result == null)
                 result = defaultCase(theEObject);
             return result;
@@ -704,6 +785,141 @@ public class SqlSwitch<T> extends Switch<T> {
      * @generated
      */
     public T caseENotExpression(ENotExpression object) {
+        return null;
+    }
+
+    /**
+     * Returns the result of interpreting the object as an instance of '<em>ELong Value</em>'.
+     * <!-- begin-user-doc -->
+     * This implementation returns null;
+     * returning a non-null result will terminate the switch.
+     * <!-- end-user-doc -->
+     * @param object the target of the switch.
+     * @return the result of interpreting the object as an instance of '<em>ELong Value</em>'.
+     * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+     * @generated
+     */
+    public T caseELongValue(ELongValue object) {
+        return null;
+    }
+
+    /**
+     * Returns the result of interpreting the object as an instance of '<em>ENull Value</em>'.
+     * <!-- begin-user-doc -->
+     * This implementation returns null;
+     * returning a non-null result will terminate the switch.
+     * <!-- end-user-doc -->
+     * @param object the target of the switch.
+     * @return the result of interpreting the object as an instance of '<em>ENull Value</em>'.
+     * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+     * @generated
+     */
+    public T caseENullValue(ENullValue object) {
+        return null;
+    }
+
+    /**
+     * Returns the result of interpreting the object as an instance of '<em>EIs Null Expression</em>'.
+     * <!-- begin-user-doc -->
+     * This implementation returns null;
+     * returning a non-null result will terminate the switch.
+     * <!-- end-user-doc -->
+     * @param object the target of the switch.
+     * @return the result of interpreting the object as an instance of '<em>EIs Null Expression</em>'.
+     * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+     * @generated
+     */
+    public T caseEIsNullExpression(EIsNullExpression object) {
+        return null;
+    }
+
+    /**
+     * Returns the result of interpreting the object as an instance of '<em>EFunction</em>'.
+     * <!-- begin-user-doc -->
+     * This implementation returns null;
+     * returning a non-null result will terminate the switch.
+     * <!-- end-user-doc -->
+     * @param object the target of the switch.
+     * @return the result of interpreting the object as an instance of '<em>EFunction</em>'.
+     * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+     * @generated
+     */
+    public T caseEFunction(EFunction object) {
+        return null;
+    }
+
+    /**
+     * Returns the result of interpreting the object as an instance of '<em>EColumn</em>'.
+     * <!-- begin-user-doc -->
+     * This implementation returns null;
+     * returning a non-null result will terminate the switch.
+     * <!-- end-user-doc -->
+     * @param object the target of the switch.
+     * @return the result of interpreting the object as an instance of '<em>EColumn</em>'.
+     * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+     * @generated
+     */
+    public T caseEColumn(EColumn object) {
+        return null;
+    }
+
+    /**
+     * Returns the result of interpreting the object as an instance of '<em>ECase Expression</em>'.
+     * <!-- begin-user-doc -->
+     * This implementation returns null;
+     * returning a non-null result will terminate the switch.
+     * <!-- end-user-doc -->
+     * @param object the target of the switch.
+     * @return the result of interpreting the object as an instance of '<em>ECase Expression</em>'.
+     * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+     * @generated
+     */
+    public T caseECaseExpression(ECaseExpression object) {
+        return null;
+    }
+
+    /**
+     * Returns the result of interpreting the object as an instance of '<em>EWhen Clause</em>'.
+     * <!-- begin-user-doc -->
+     * This implementation returns null;
+     * returning a non-null result will terminate the switch.
+     * <!-- end-user-doc -->
+     * @param object the target of the switch.
+     * @return the result of interpreting the object as an instance of '<em>EWhen Clause</em>'.
+     * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+     * @generated
+     */
+    public T caseEWhenClause(EWhenClause object) {
+        return null;
+    }
+
+    /**
+     * Returns the result of interpreting the object as an instance of '<em>EString Value</em>'.
+     * <!-- begin-user-doc -->
+     * This implementation returns null;
+     * returning a non-null result will terminate the switch.
+     * <!-- end-user-doc -->
+     * @param object the target of the switch.
+     * @return the result of interpreting the object as an instance of '<em>EString Value</em>'.
+     * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+     * @generated
+     */
+    public T caseEStringValue(EStringValue object) {
+        return null;
+    }
+
+    /**
+     * Returns the result of interpreting the object as an instance of '<em>EExpression List</em>'.
+     * <!-- begin-user-doc -->
+     * This implementation returns null;
+     * returning a non-null result will terminate the switch.
+     * <!-- end-user-doc -->
+     * @param object the target of the switch.
+     * @return the result of interpreting the object as an instance of '<em>EExpression List</em>'.
+     * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+     * @generated
+     */
+    public T caseEExpressionList(EExpressionList object) {
         return null;
     }
 

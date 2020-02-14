@@ -4,6 +4,7 @@ package org.vgu.se.sql.impl;
 
 import org.eclipse.emf.common.notify.Notification;
 
+import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
@@ -30,7 +31,7 @@ import org.vgu.se.sql.SqlPackage;
 public class ENotExpressionImpl extends MinimalEObjectImpl.Container
     implements ENotExpression {
     /**
-     * The cached value of the '{@link #getExpression() <em>Expression</em>}' reference.
+     * The cached value of the '{@link #getExpression() <em>Expression</em>}' containment reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @see #getExpression()
@@ -65,16 +66,6 @@ public class ENotExpressionImpl extends MinimalEObjectImpl.Container
      */
     @Override
     public EExpression getExpression() {
-        if (expression != null && expression.eIsProxy()) {
-            InternalEObject oldExpression = (InternalEObject) expression;
-            expression = (EExpression) eResolveProxy(oldExpression);
-            if (expression != oldExpression) {
-                if (eNotificationRequired())
-                    eNotify(new ENotificationImpl(this, Notification.RESOLVE,
-                        SqlPackage.ENOT_EXPRESSION__EXPRESSION, oldExpression,
-                        expression));
-            }
-        }
         return expression;
     }
 
@@ -83,8 +74,20 @@ public class ENotExpressionImpl extends MinimalEObjectImpl.Container
      * <!-- end-user-doc -->
      * @generated
      */
-    public EExpression basicGetExpression() {
-        return expression;
+    public NotificationChain basicSetExpression(EExpression newExpression,
+        NotificationChain msgs) {
+        EExpression oldExpression = expression;
+        expression = newExpression;
+        if (eNotificationRequired()) {
+            ENotificationImpl notification = new ENotificationImpl(this,
+                Notification.SET, SqlPackage.ENOT_EXPRESSION__EXPRESSION,
+                oldExpression, newExpression);
+            if (msgs == null)
+                msgs = notification;
+            else
+                msgs.add(notification);
+        }
+        return msgs;
     }
 
     /**
@@ -94,12 +97,42 @@ public class ENotExpressionImpl extends MinimalEObjectImpl.Container
      */
     @Override
     public void setExpression(EExpression newExpression) {
-        EExpression oldExpression = expression;
-        expression = newExpression;
-        if (eNotificationRequired())
+        if (newExpression != expression) {
+            NotificationChain msgs = null;
+            if (expression != null)
+                msgs = ((InternalEObject) expression)
+                    .eInverseRemove(this,
+                        EOPPOSITE_FEATURE_BASE
+                            - SqlPackage.ENOT_EXPRESSION__EXPRESSION,
+                        null, msgs);
+            if (newExpression != null)
+                msgs = ((InternalEObject) newExpression)
+                    .eInverseAdd(this,
+                        EOPPOSITE_FEATURE_BASE
+                            - SqlPackage.ENOT_EXPRESSION__EXPRESSION,
+                        null, msgs);
+            msgs = basicSetExpression(newExpression, msgs);
+            if (msgs != null)
+                msgs.dispatch();
+        } else if (eNotificationRequired())
             eNotify(new ENotificationImpl(this, Notification.SET,
-                SqlPackage.ENOT_EXPRESSION__EXPRESSION, oldExpression,
-                expression));
+                SqlPackage.ENOT_EXPRESSION__EXPRESSION, newExpression,
+                newExpression));
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public NotificationChain eInverseRemove(InternalEObject otherEnd,
+        int featureID, NotificationChain msgs) {
+        switch (featureID) {
+        case SqlPackage.ENOT_EXPRESSION__EXPRESSION:
+            return basicSetExpression(null, msgs);
+        }
+        return super.eInverseRemove(otherEnd, featureID, msgs);
     }
 
     /**
@@ -111,9 +144,7 @@ public class ENotExpressionImpl extends MinimalEObjectImpl.Container
     public Object eGet(int featureID, boolean resolve, boolean coreType) {
         switch (featureID) {
         case SqlPackage.ENOT_EXPRESSION__EXPRESSION:
-            if (resolve)
-                return getExpression();
-            return basicGetExpression();
+            return getExpression();
         }
         return super.eGet(featureID, resolve, coreType);
     }

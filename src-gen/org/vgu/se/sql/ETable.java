@@ -21,22 +21,22 @@ package org.vgu.se.sql;
  */
 public interface ETable extends EFromItem {
     /**
-     * Returns the value of the '<em><b>Alias</b></em>' reference.
+     * Returns the value of the '<em><b>Alias</b></em>' containment reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return the value of the '<em>Alias</em>' reference.
+     * @return the value of the '<em>Alias</em>' containment reference.
      * @see #setAlias(EAlias)
      * @see org.vgu.se.sql.SqlPackage#getETable_Alias()
-     * @model
+     * @model containment="true"
      * @generated
      */
     EAlias getAlias();
 
     /**
-     * Sets the value of the '{@link org.vgu.se.sql.ETable#getAlias <em>Alias</em>}' reference.
+     * Sets the value of the '{@link org.vgu.se.sql.ETable#getAlias <em>Alias</em>}' containment reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @param value the new value of the '<em>Alias</em>' reference.
+     * @param value the new value of the '<em>Alias</em>' containment reference.
      * @see #getAlias()
      * @generated
      */

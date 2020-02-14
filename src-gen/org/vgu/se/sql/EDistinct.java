@@ -47,13 +47,13 @@ public interface EDistinct extends EObject {
     void setUseUnique(boolean value);
 
     /**
-     * Returns the value of the '<em><b>On Select Items</b></em>' reference list.
+     * Returns the value of the '<em><b>On Select Items</b></em>' containment reference list.
      * The list contents are of type {@link org.vgu.se.sql.ESelectItem}.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return the value of the '<em>On Select Items</em>' reference list.
+     * @return the value of the '<em>On Select Items</em>' containment reference list.
      * @see org.vgu.se.sql.SqlPackage#getEDistinct_OnSelectItems()
-     * @model
+     * @model containment="true"
      * @generated
      */
     EList<ESelectItem> getOnSelectItems();

@@ -276,44 +276,44 @@ public interface EJoin extends EObject {
     void setApply(boolean value);
 
     /**
-     * Returns the value of the '<em><b>Right Item</b></em>' reference.
+     * Returns the value of the '<em><b>Right Item</b></em>' containment reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return the value of the '<em>Right Item</em>' reference.
+     * @return the value of the '<em>Right Item</em>' containment reference.
      * @see #setRightItem(EFromItem)
      * @see org.vgu.se.sql.SqlPackage#getEJoin_RightItem()
-     * @model required="true"
+     * @model containment="true" required="true"
      * @generated
      */
     EFromItem getRightItem();
 
     /**
-     * Sets the value of the '{@link org.vgu.se.sql.EJoin#getRightItem <em>Right Item</em>}' reference.
+     * Sets the value of the '{@link org.vgu.se.sql.EJoin#getRightItem <em>Right Item</em>}' containment reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @param value the new value of the '<em>Right Item</em>' reference.
+     * @param value the new value of the '<em>Right Item</em>' containment reference.
      * @see #getRightItem()
      * @generated
      */
     void setRightItem(EFromItem value);
 
     /**
-     * Returns the value of the '<em><b>On Expression</b></em>' reference.
+     * Returns the value of the '<em><b>On Expression</b></em>' containment reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return the value of the '<em>On Expression</em>' reference.
+     * @return the value of the '<em>On Expression</em>' containment reference.
      * @see #setOnExpression(EExpression)
      * @see org.vgu.se.sql.SqlPackage#getEJoin_OnExpression()
-     * @model
+     * @model containment="true"
      * @generated
      */
     EExpression getOnExpression();
 
     /**
-     * Sets the value of the '{@link org.vgu.se.sql.EJoin#getOnExpression <em>On Expression</em>}' reference.
+     * Sets the value of the '{@link org.vgu.se.sql.EJoin#getOnExpression <em>On Expression</em>}' containment reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @param value the new value of the '<em>On Expression</em>' reference.
+     * @param value the new value of the '<em>On Expression</em>' containment reference.
      * @see #getOnExpression()
      * @generated
      */

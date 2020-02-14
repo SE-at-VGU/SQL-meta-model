@@ -19,46 +19,46 @@ package org.vgu.se.sql;
  * @model
  * @generated
  */
-public interface ESubSelect extends EFromItem {
+public interface ESubSelect extends EFromItem, EExpression {
     /**
-     * Returns the value of the '<em><b>Alias</b></em>' reference.
+     * Returns the value of the '<em><b>Alias</b></em>' containment reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return the value of the '<em>Alias</em>' reference.
+     * @return the value of the '<em>Alias</em>' containment reference.
      * @see #setAlias(EAlias)
      * @see org.vgu.se.sql.SqlPackage#getESubSelect_Alias()
-     * @model
+     * @model containment="true"
      * @generated
      */
     EAlias getAlias();
 
     /**
-     * Sets the value of the '{@link org.vgu.se.sql.ESubSelect#getAlias <em>Alias</em>}' reference.
+     * Sets the value of the '{@link org.vgu.se.sql.ESubSelect#getAlias <em>Alias</em>}' containment reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @param value the new value of the '<em>Alias</em>' reference.
+     * @param value the new value of the '<em>Alias</em>' containment reference.
      * @see #getAlias()
      * @generated
      */
     void setAlias(EAlias value);
 
     /**
-     * Returns the value of the '<em><b>Select Body</b></em>' reference.
+     * Returns the value of the '<em><b>Select Body</b></em>' containment reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return the value of the '<em>Select Body</em>' reference.
+     * @return the value of the '<em>Select Body</em>' containment reference.
      * @see #setSelectBody(ESelectBody)
      * @see org.vgu.se.sql.SqlPackage#getESubSelect_SelectBody()
-     * @model required="true"
+     * @model containment="true" required="true"
      * @generated
      */
     ESelectBody getSelectBody();
 
     /**
-     * Sets the value of the '{@link org.vgu.se.sql.ESubSelect#getSelectBody <em>Select Body</em>}' reference.
+     * Sets the value of the '{@link org.vgu.se.sql.ESubSelect#getSelectBody <em>Select Body</em>}' containment reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @param value the new value of the '<em>Select Body</em>' reference.
+     * @param value the new value of the '<em>Select Body</em>' containment reference.
      * @see #getSelectBody()
      * @generated
      */

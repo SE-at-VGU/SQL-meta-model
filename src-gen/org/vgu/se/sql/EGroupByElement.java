@@ -24,13 +24,13 @@ import org.eclipse.emf.ecore.EObject;
  */
 public interface EGroupByElement extends EObject {
     /**
-     * Returns the value of the '<em><b>Group By Expressions</b></em>' reference list.
+     * Returns the value of the '<em><b>Group By Expressions</b></em>' containment reference list.
      * The list contents are of type {@link org.vgu.se.sql.EExpression}.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return the value of the '<em>Group By Expressions</em>' reference list.
+     * @return the value of the '<em>Group By Expressions</em>' containment reference list.
      * @see org.vgu.se.sql.SqlPackage#getEGroupByElement_GroupByExpressions()
-     * @model
+     * @model containment="true"
      * @generated
      */
     EList<EExpression> getGroupByExpressions();

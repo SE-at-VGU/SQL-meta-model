@@ -193,6 +193,87 @@ public interface SqlFactory extends EFactory {
     ENotExpression createENotExpression();
 
     /**
+     * Returns a new object of class '<em>ELong Value</em>'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return a new object of class '<em>ELong Value</em>'.
+     * @generated
+     */
+    ELongValue createELongValue();
+
+    /**
+     * Returns a new object of class '<em>ENull Value</em>'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return a new object of class '<em>ENull Value</em>'.
+     * @generated
+     */
+    ENullValue createENullValue();
+
+    /**
+     * Returns a new object of class '<em>EIs Null Expression</em>'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return a new object of class '<em>EIs Null Expression</em>'.
+     * @generated
+     */
+    EIsNullExpression createEIsNullExpression();
+
+    /**
+     * Returns a new object of class '<em>EFunction</em>'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return a new object of class '<em>EFunction</em>'.
+     * @generated
+     */
+    EFunction createEFunction();
+
+    /**
+     * Returns a new object of class '<em>EColumn</em>'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return a new object of class '<em>EColumn</em>'.
+     * @generated
+     */
+    EColumn createEColumn();
+
+    /**
+     * Returns a new object of class '<em>ECase Expression</em>'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return a new object of class '<em>ECase Expression</em>'.
+     * @generated
+     */
+    ECaseExpression createECaseExpression();
+
+    /**
+     * Returns a new object of class '<em>EWhen Clause</em>'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return a new object of class '<em>EWhen Clause</em>'.
+     * @generated
+     */
+    EWhenClause createEWhenClause();
+
+    /**
+     * Returns a new object of class '<em>EString Value</em>'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return a new object of class '<em>EString Value</em>'.
+     * @generated
+     */
+    EStringValue createEStringValue();
+
+    /**
+     * Returns a new object of class '<em>EExpression List</em>'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return a new object of class '<em>EExpression List</em>'.
+     * @generated
+     */
+    EExpressionList createEExpressionList();
+
+    /**
      * Returns the package supported by this factory.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->

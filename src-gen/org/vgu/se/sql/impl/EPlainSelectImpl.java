@@ -6,6 +6,7 @@ import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
 
+import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
@@ -14,8 +15,8 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
-import org.eclipse.emf.ecore.util.EObjectResolvingEList;
-
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.InternalEList;
 import org.vgu.se.sql.EDistinct;
 import org.vgu.se.sql.EExpression;
 import org.vgu.se.sql.EFromItem;
@@ -47,7 +48,7 @@ import org.vgu.se.sql.SqlPackage;
 public class EPlainSelectImpl extends MinimalEObjectImpl.Container
     implements EPlainSelect {
     /**
-     * The cached value of the '{@link #getDistinct() <em>Distinct</em>}' reference.
+     * The cached value of the '{@link #getDistinct() <em>Distinct</em>}' containment reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @see #getDistinct()
@@ -57,7 +58,7 @@ public class EPlainSelectImpl extends MinimalEObjectImpl.Container
     protected EDistinct distinct;
 
     /**
-     * The cached value of the '{@link #getSelectItems() <em>Select Items</em>}' reference list.
+     * The cached value of the '{@link #getSelectItems() <em>Select Items</em>}' containment reference list.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @see #getSelectItems()
@@ -67,7 +68,7 @@ public class EPlainSelectImpl extends MinimalEObjectImpl.Container
     protected EList<ESelectItem> selectItems;
 
     /**
-     * The cached value of the '{@link #getFromItem() <em>From Item</em>}' reference.
+     * The cached value of the '{@link #getFromItem() <em>From Item</em>}' containment reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @see #getFromItem()
@@ -77,17 +78,17 @@ public class EPlainSelectImpl extends MinimalEObjectImpl.Container
     protected EFromItem fromItem;
 
     /**
-     * The cached value of the '{@link #getJoins() <em>Joins</em>}' reference.
+     * The cached value of the '{@link #getJoins() <em>Joins</em>}' containment reference list.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @see #getJoins()
      * @generated
      * @ordered
      */
-    protected EJoin joins;
+    protected EList<EJoin> joins;
 
     /**
-     * The cached value of the '{@link #getWhere() <em>Where</em>}' reference.
+     * The cached value of the '{@link #getWhere() <em>Where</em>}' containment reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @see #getWhere()
@@ -97,7 +98,7 @@ public class EPlainSelectImpl extends MinimalEObjectImpl.Container
     protected EExpression where;
 
     /**
-     * The cached value of the '{@link #getGroupBy() <em>Group By</em>}' reference.
+     * The cached value of the '{@link #getGroupBy() <em>Group By</em>}' containment reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @see #getGroupBy()
@@ -107,7 +108,7 @@ public class EPlainSelectImpl extends MinimalEObjectImpl.Container
     protected EGroupByElement groupBy;
 
     /**
-     * The cached value of the '{@link #getHaving() <em>Having</em>}' reference.
+     * The cached value of the '{@link #getHaving() <em>Having</em>}' containment reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @see #getHaving()
@@ -142,16 +143,6 @@ public class EPlainSelectImpl extends MinimalEObjectImpl.Container
      */
     @Override
     public EDistinct getDistinct() {
-        if (distinct != null && distinct.eIsProxy()) {
-            InternalEObject oldDistinct = (InternalEObject) distinct;
-            distinct = (EDistinct) eResolveProxy(oldDistinct);
-            if (distinct != oldDistinct) {
-                if (eNotificationRequired())
-                    eNotify(new ENotificationImpl(this, Notification.RESOLVE,
-                        SqlPackage.EPLAIN_SELECT__DISTINCT, oldDistinct,
-                        distinct));
-            }
-        }
         return distinct;
     }
 
@@ -160,8 +151,20 @@ public class EPlainSelectImpl extends MinimalEObjectImpl.Container
      * <!-- end-user-doc -->
      * @generated
      */
-    public EDistinct basicGetDistinct() {
-        return distinct;
+    public NotificationChain basicSetDistinct(EDistinct newDistinct,
+        NotificationChain msgs) {
+        EDistinct oldDistinct = distinct;
+        distinct = newDistinct;
+        if (eNotificationRequired()) {
+            ENotificationImpl notification = new ENotificationImpl(this,
+                Notification.SET, SqlPackage.EPLAIN_SELECT__DISTINCT,
+                oldDistinct, newDistinct);
+            if (msgs == null)
+                msgs = notification;
+            else
+                msgs.add(notification);
+        }
+        return msgs;
     }
 
     /**
@@ -171,11 +174,22 @@ public class EPlainSelectImpl extends MinimalEObjectImpl.Container
      */
     @Override
     public void setDistinct(EDistinct newDistinct) {
-        EDistinct oldDistinct = distinct;
-        distinct = newDistinct;
-        if (eNotificationRequired())
+        if (newDistinct != distinct) {
+            NotificationChain msgs = null;
+            if (distinct != null)
+                msgs = ((InternalEObject) distinct).eInverseRemove(this,
+                    EOPPOSITE_FEATURE_BASE - SqlPackage.EPLAIN_SELECT__DISTINCT,
+                    null, msgs);
+            if (newDistinct != null)
+                msgs = ((InternalEObject) newDistinct).eInverseAdd(this,
+                    EOPPOSITE_FEATURE_BASE - SqlPackage.EPLAIN_SELECT__DISTINCT,
+                    null, msgs);
+            msgs = basicSetDistinct(newDistinct, msgs);
+            if (msgs != null)
+                msgs.dispatch();
+        } else if (eNotificationRequired())
             eNotify(new ENotificationImpl(this, Notification.SET,
-                SqlPackage.EPLAIN_SELECT__DISTINCT, oldDistinct, distinct));
+                SqlPackage.EPLAIN_SELECT__DISTINCT, newDistinct, newDistinct));
     }
 
     /**
@@ -186,7 +200,7 @@ public class EPlainSelectImpl extends MinimalEObjectImpl.Container
     @Override
     public EList<ESelectItem> getSelectItems() {
         if (selectItems == null) {
-            selectItems = new EObjectResolvingEList<ESelectItem>(
+            selectItems = new EObjectContainmentEList<ESelectItem>(
                 ESelectItem.class, this,
                 SqlPackage.EPLAIN_SELECT__SELECT_ITEMS);
         }
@@ -200,16 +214,6 @@ public class EPlainSelectImpl extends MinimalEObjectImpl.Container
      */
     @Override
     public EFromItem getFromItem() {
-        if (fromItem != null && fromItem.eIsProxy()) {
-            InternalEObject oldFromItem = (InternalEObject) fromItem;
-            fromItem = (EFromItem) eResolveProxy(oldFromItem);
-            if (fromItem != oldFromItem) {
-                if (eNotificationRequired())
-                    eNotify(new ENotificationImpl(this, Notification.RESOLVE,
-                        SqlPackage.EPLAIN_SELECT__FROM_ITEM, oldFromItem,
-                        fromItem));
-            }
-        }
         return fromItem;
     }
 
@@ -218,8 +222,20 @@ public class EPlainSelectImpl extends MinimalEObjectImpl.Container
      * <!-- end-user-doc -->
      * @generated
      */
-    public EFromItem basicGetFromItem() {
-        return fromItem;
+    public NotificationChain basicSetFromItem(EFromItem newFromItem,
+        NotificationChain msgs) {
+        EFromItem oldFromItem = fromItem;
+        fromItem = newFromItem;
+        if (eNotificationRequired()) {
+            ENotificationImpl notification = new ENotificationImpl(this,
+                Notification.SET, SqlPackage.EPLAIN_SELECT__FROM_ITEM,
+                oldFromItem, newFromItem);
+            if (msgs == null)
+                msgs = notification;
+            else
+                msgs.add(notification);
+        }
+        return msgs;
     }
 
     /**
@@ -229,11 +245,24 @@ public class EPlainSelectImpl extends MinimalEObjectImpl.Container
      */
     @Override
     public void setFromItem(EFromItem newFromItem) {
-        EFromItem oldFromItem = fromItem;
-        fromItem = newFromItem;
-        if (eNotificationRequired())
+        if (newFromItem != fromItem) {
+            NotificationChain msgs = null;
+            if (fromItem != null)
+                msgs = ((InternalEObject) fromItem).eInverseRemove(this,
+                    EOPPOSITE_FEATURE_BASE
+                        - SqlPackage.EPLAIN_SELECT__FROM_ITEM,
+                    null, msgs);
+            if (newFromItem != null)
+                msgs = ((InternalEObject) newFromItem).eInverseAdd(this,
+                    EOPPOSITE_FEATURE_BASE
+                        - SqlPackage.EPLAIN_SELECT__FROM_ITEM,
+                    null, msgs);
+            msgs = basicSetFromItem(newFromItem, msgs);
+            if (msgs != null)
+                msgs.dispatch();
+        } else if (eNotificationRequired())
             eNotify(new ENotificationImpl(this, Notification.SET,
-                SqlPackage.EPLAIN_SELECT__FROM_ITEM, oldFromItem, fromItem));
+                SqlPackage.EPLAIN_SELECT__FROM_ITEM, newFromItem, newFromItem));
     }
 
     /**
@@ -242,40 +271,12 @@ public class EPlainSelectImpl extends MinimalEObjectImpl.Container
      * @generated
      */
     @Override
-    public EJoin getJoins() {
-        if (joins != null && joins.eIsProxy()) {
-            InternalEObject oldJoins = (InternalEObject) joins;
-            joins = (EJoin) eResolveProxy(oldJoins);
-            if (joins != oldJoins) {
-                if (eNotificationRequired())
-                    eNotify(new ENotificationImpl(this, Notification.RESOLVE,
-                        SqlPackage.EPLAIN_SELECT__JOINS, oldJoins, joins));
-            }
+    public EList<EJoin> getJoins() {
+        if (joins == null) {
+            joins = new EObjectContainmentEList<EJoin>(EJoin.class, this,
+                SqlPackage.EPLAIN_SELECT__JOINS);
         }
         return joins;
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    public EJoin basicGetJoins() {
-        return joins;
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    @Override
-    public void setJoins(EJoin newJoins) {
-        EJoin oldJoins = joins;
-        joins = newJoins;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET,
-                SqlPackage.EPLAIN_SELECT__JOINS, oldJoins, joins));
     }
 
     /**
@@ -285,15 +286,6 @@ public class EPlainSelectImpl extends MinimalEObjectImpl.Container
      */
     @Override
     public EExpression getWhere() {
-        if (where != null && where.eIsProxy()) {
-            InternalEObject oldWhere = (InternalEObject) where;
-            where = (EExpression) eResolveProxy(oldWhere);
-            if (where != oldWhere) {
-                if (eNotificationRequired())
-                    eNotify(new ENotificationImpl(this, Notification.RESOLVE,
-                        SqlPackage.EPLAIN_SELECT__WHERE, oldWhere, where));
-            }
-        }
         return where;
     }
 
@@ -302,8 +294,20 @@ public class EPlainSelectImpl extends MinimalEObjectImpl.Container
      * <!-- end-user-doc -->
      * @generated
      */
-    public EExpression basicGetWhere() {
-        return where;
+    public NotificationChain basicSetWhere(EExpression newWhere,
+        NotificationChain msgs) {
+        EExpression oldWhere = where;
+        where = newWhere;
+        if (eNotificationRequired()) {
+            ENotificationImpl notification = new ENotificationImpl(this,
+                Notification.SET, SqlPackage.EPLAIN_SELECT__WHERE, oldWhere,
+                newWhere);
+            if (msgs == null)
+                msgs = notification;
+            else
+                msgs.add(notification);
+        }
+        return msgs;
     }
 
     /**
@@ -313,11 +317,22 @@ public class EPlainSelectImpl extends MinimalEObjectImpl.Container
      */
     @Override
     public void setWhere(EExpression newWhere) {
-        EExpression oldWhere = where;
-        where = newWhere;
-        if (eNotificationRequired())
+        if (newWhere != where) {
+            NotificationChain msgs = null;
+            if (where != null)
+                msgs = ((InternalEObject) where).eInverseRemove(this,
+                    EOPPOSITE_FEATURE_BASE - SqlPackage.EPLAIN_SELECT__WHERE,
+                    null, msgs);
+            if (newWhere != null)
+                msgs = ((InternalEObject) newWhere).eInverseAdd(this,
+                    EOPPOSITE_FEATURE_BASE - SqlPackage.EPLAIN_SELECT__WHERE,
+                    null, msgs);
+            msgs = basicSetWhere(newWhere, msgs);
+            if (msgs != null)
+                msgs.dispatch();
+        } else if (eNotificationRequired())
             eNotify(new ENotificationImpl(this, Notification.SET,
-                SqlPackage.EPLAIN_SELECT__WHERE, oldWhere, where));
+                SqlPackage.EPLAIN_SELECT__WHERE, newWhere, newWhere));
     }
 
     /**
@@ -327,16 +342,6 @@ public class EPlainSelectImpl extends MinimalEObjectImpl.Container
      */
     @Override
     public EGroupByElement getGroupBy() {
-        if (groupBy != null && groupBy.eIsProxy()) {
-            InternalEObject oldGroupBy = (InternalEObject) groupBy;
-            groupBy = (EGroupByElement) eResolveProxy(oldGroupBy);
-            if (groupBy != oldGroupBy) {
-                if (eNotificationRequired())
-                    eNotify(new ENotificationImpl(this, Notification.RESOLVE,
-                        SqlPackage.EPLAIN_SELECT__GROUP_BY, oldGroupBy,
-                        groupBy));
-            }
-        }
         return groupBy;
     }
 
@@ -345,8 +350,20 @@ public class EPlainSelectImpl extends MinimalEObjectImpl.Container
      * <!-- end-user-doc -->
      * @generated
      */
-    public EGroupByElement basicGetGroupBy() {
-        return groupBy;
+    public NotificationChain basicSetGroupBy(EGroupByElement newGroupBy,
+        NotificationChain msgs) {
+        EGroupByElement oldGroupBy = groupBy;
+        groupBy = newGroupBy;
+        if (eNotificationRequired()) {
+            ENotificationImpl notification = new ENotificationImpl(this,
+                Notification.SET, SqlPackage.EPLAIN_SELECT__GROUP_BY,
+                oldGroupBy, newGroupBy);
+            if (msgs == null)
+                msgs = notification;
+            else
+                msgs.add(notification);
+        }
+        return msgs;
     }
 
     /**
@@ -356,11 +373,22 @@ public class EPlainSelectImpl extends MinimalEObjectImpl.Container
      */
     @Override
     public void setGroupBy(EGroupByElement newGroupBy) {
-        EGroupByElement oldGroupBy = groupBy;
-        groupBy = newGroupBy;
-        if (eNotificationRequired())
+        if (newGroupBy != groupBy) {
+            NotificationChain msgs = null;
+            if (groupBy != null)
+                msgs = ((InternalEObject) groupBy).eInverseRemove(this,
+                    EOPPOSITE_FEATURE_BASE - SqlPackage.EPLAIN_SELECT__GROUP_BY,
+                    null, msgs);
+            if (newGroupBy != null)
+                msgs = ((InternalEObject) newGroupBy).eInverseAdd(this,
+                    EOPPOSITE_FEATURE_BASE - SqlPackage.EPLAIN_SELECT__GROUP_BY,
+                    null, msgs);
+            msgs = basicSetGroupBy(newGroupBy, msgs);
+            if (msgs != null)
+                msgs.dispatch();
+        } else if (eNotificationRequired())
             eNotify(new ENotificationImpl(this, Notification.SET,
-                SqlPackage.EPLAIN_SELECT__GROUP_BY, oldGroupBy, groupBy));
+                SqlPackage.EPLAIN_SELECT__GROUP_BY, newGroupBy, newGroupBy));
     }
 
     /**
@@ -370,15 +398,6 @@ public class EPlainSelectImpl extends MinimalEObjectImpl.Container
      */
     @Override
     public EExpression getHaving() {
-        if (having != null && having.eIsProxy()) {
-            InternalEObject oldHaving = (InternalEObject) having;
-            having = (EExpression) eResolveProxy(oldHaving);
-            if (having != oldHaving) {
-                if (eNotificationRequired())
-                    eNotify(new ENotificationImpl(this, Notification.RESOLVE,
-                        SqlPackage.EPLAIN_SELECT__HAVING, oldHaving, having));
-            }
-        }
         return having;
     }
 
@@ -387,8 +406,20 @@ public class EPlainSelectImpl extends MinimalEObjectImpl.Container
      * <!-- end-user-doc -->
      * @generated
      */
-    public EExpression basicGetHaving() {
-        return having;
+    public NotificationChain basicSetHaving(EExpression newHaving,
+        NotificationChain msgs) {
+        EExpression oldHaving = having;
+        having = newHaving;
+        if (eNotificationRequired()) {
+            ENotificationImpl notification = new ENotificationImpl(this,
+                Notification.SET, SqlPackage.EPLAIN_SELECT__HAVING, oldHaving,
+                newHaving);
+            if (msgs == null)
+                msgs = notification;
+            else
+                msgs.add(notification);
+        }
+        return msgs;
     }
 
     /**
@@ -398,11 +429,50 @@ public class EPlainSelectImpl extends MinimalEObjectImpl.Container
      */
     @Override
     public void setHaving(EExpression newHaving) {
-        EExpression oldHaving = having;
-        having = newHaving;
-        if (eNotificationRequired())
+        if (newHaving != having) {
+            NotificationChain msgs = null;
+            if (having != null)
+                msgs = ((InternalEObject) having).eInverseRemove(this,
+                    EOPPOSITE_FEATURE_BASE - SqlPackage.EPLAIN_SELECT__HAVING,
+                    null, msgs);
+            if (newHaving != null)
+                msgs = ((InternalEObject) newHaving).eInverseAdd(this,
+                    EOPPOSITE_FEATURE_BASE - SqlPackage.EPLAIN_SELECT__HAVING,
+                    null, msgs);
+            msgs = basicSetHaving(newHaving, msgs);
+            if (msgs != null)
+                msgs.dispatch();
+        } else if (eNotificationRequired())
             eNotify(new ENotificationImpl(this, Notification.SET,
-                SqlPackage.EPLAIN_SELECT__HAVING, oldHaving, having));
+                SqlPackage.EPLAIN_SELECT__HAVING, newHaving, newHaving));
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public NotificationChain eInverseRemove(InternalEObject otherEnd,
+        int featureID, NotificationChain msgs) {
+        switch (featureID) {
+        case SqlPackage.EPLAIN_SELECT__DISTINCT:
+            return basicSetDistinct(null, msgs);
+        case SqlPackage.EPLAIN_SELECT__SELECT_ITEMS:
+            return ((InternalEList<?>) getSelectItems()).basicRemove(otherEnd,
+                msgs);
+        case SqlPackage.EPLAIN_SELECT__FROM_ITEM:
+            return basicSetFromItem(null, msgs);
+        case SqlPackage.EPLAIN_SELECT__JOINS:
+            return ((InternalEList<?>) getJoins()).basicRemove(otherEnd, msgs);
+        case SqlPackage.EPLAIN_SELECT__WHERE:
+            return basicSetWhere(null, msgs);
+        case SqlPackage.EPLAIN_SELECT__GROUP_BY:
+            return basicSetGroupBy(null, msgs);
+        case SqlPackage.EPLAIN_SELECT__HAVING:
+            return basicSetHaving(null, msgs);
+        }
+        return super.eInverseRemove(otherEnd, featureID, msgs);
     }
 
     /**
@@ -414,31 +484,19 @@ public class EPlainSelectImpl extends MinimalEObjectImpl.Container
     public Object eGet(int featureID, boolean resolve, boolean coreType) {
         switch (featureID) {
         case SqlPackage.EPLAIN_SELECT__DISTINCT:
-            if (resolve)
-                return getDistinct();
-            return basicGetDistinct();
+            return getDistinct();
         case SqlPackage.EPLAIN_SELECT__SELECT_ITEMS:
             return getSelectItems();
         case SqlPackage.EPLAIN_SELECT__FROM_ITEM:
-            if (resolve)
-                return getFromItem();
-            return basicGetFromItem();
+            return getFromItem();
         case SqlPackage.EPLAIN_SELECT__JOINS:
-            if (resolve)
-                return getJoins();
-            return basicGetJoins();
+            return getJoins();
         case SqlPackage.EPLAIN_SELECT__WHERE:
-            if (resolve)
-                return getWhere();
-            return basicGetWhere();
+            return getWhere();
         case SqlPackage.EPLAIN_SELECT__GROUP_BY:
-            if (resolve)
-                return getGroupBy();
-            return basicGetGroupBy();
+            return getGroupBy();
         case SqlPackage.EPLAIN_SELECT__HAVING:
-            if (resolve)
-                return getHaving();
-            return basicGetHaving();
+            return getHaving();
         }
         return super.eGet(featureID, resolve, coreType);
     }
@@ -464,7 +522,8 @@ public class EPlainSelectImpl extends MinimalEObjectImpl.Container
             setFromItem((EFromItem) newValue);
             return;
         case SqlPackage.EPLAIN_SELECT__JOINS:
-            setJoins((EJoin) newValue);
+            getJoins().clear();
+            getJoins().addAll((Collection<? extends EJoin>) newValue);
             return;
         case SqlPackage.EPLAIN_SELECT__WHERE:
             setWhere((EExpression) newValue);
@@ -497,7 +556,7 @@ public class EPlainSelectImpl extends MinimalEObjectImpl.Container
             setFromItem((EFromItem) null);
             return;
         case SqlPackage.EPLAIN_SELECT__JOINS:
-            setJoins((EJoin) null);
+            getJoins().clear();
             return;
         case SqlPackage.EPLAIN_SELECT__WHERE:
             setWhere((EExpression) null);
@@ -527,7 +586,7 @@ public class EPlainSelectImpl extends MinimalEObjectImpl.Container
         case SqlPackage.EPLAIN_SELECT__FROM_ITEM:
             return fromItem != null;
         case SqlPackage.EPLAIN_SELECT__JOINS:
-            return joins != null;
+            return joins != null && !joins.isEmpty();
         case SqlPackage.EPLAIN_SELECT__WHERE:
             return where != null;
         case SqlPackage.EPLAIN_SELECT__GROUP_BY:

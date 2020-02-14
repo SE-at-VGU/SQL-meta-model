@@ -12,7 +12,7 @@
       ecorePackage="sql.ecore#/">
     <genClasses image="false" ecoreClass="sql.ecore#//EStatement"/>
     <genClasses ecoreClass="sql.ecore#//ESelect">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference sql.ecore#//ESelect/selectBody"/>
+      <genFeatures children="true" createChild="true" propertySortChoices="true" ecoreFeature="ecore:EReference sql.ecore#//ESelect/selectBody"/>
     </genClasses>
     <genClasses ecoreClass="sql.ecore#//ESelectBody"/>
     <genClasses ecoreClass="sql.ecore#//EPlainSelect">
@@ -78,10 +78,43 @@
     </genClasses>
     <genClasses ecoreClass="sql.ecore#//ESubSelect">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference sql.ecore#//ESubSelect/alias"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference sql.ecore#//ESubSelect/selectBody"/>
+      <genFeatures children="true" createChild="true" propertySortChoices="true" ecoreFeature="ecore:EReference sql.ecore#//ESubSelect/selectBody"/>
     </genClasses>
     <genClasses ecoreClass="sql.ecore#//ENotExpression">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference sql.ecore#//ENotExpression/expression"/>
+    </genClasses>
+    <genClasses ecoreClass="sql.ecore#//ELongValue">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute sql.ecore#//ELongValue/value"/>
+    </genClasses>
+    <genClasses ecoreClass="sql.ecore#//ENullValue"/>
+    <genClasses ecoreClass="sql.ecore#//EIsNullExpression">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute sql.ecore#//EIsNullExpression/not"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference sql.ecore#//EIsNullExpression/leftExpression"/>
+    </genClasses>
+    <genClasses ecoreClass="sql.ecore#//EFunction">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute sql.ecore#//EFunction/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute sql.ecore#//EFunction/allColumns"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute sql.ecore#//EFunction/distinct"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference sql.ecore#//EFunction/parameters"/>
+    </genClasses>
+    <genClasses ecoreClass="sql.ecore#//EColumn">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute sql.ecore#//EColumn/columnName"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference sql.ecore#//EColumn/table"/>
+    </genClasses>
+    <genClasses ecoreClass="sql.ecore#//ECaseExpression">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference sql.ecore#//ECaseExpression/switchExpression"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference sql.ecore#//ECaseExpression/elseExpression"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference sql.ecore#//ECaseExpression/whenClauses"/>
+    </genClasses>
+    <genClasses ecoreClass="sql.ecore#//EWhenClause">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference sql.ecore#//EWhenClause/whenExpression"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference sql.ecore#//EWhenClause/thenExpression"/>
+    </genClasses>
+    <genClasses ecoreClass="sql.ecore#//EStringValue">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute sql.ecore#//EStringValue/value"/>
+    </genClasses>
+    <genClasses ecoreClass="sql.ecore#//EExpressionList">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference sql.ecore#//EExpressionList/expressions"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

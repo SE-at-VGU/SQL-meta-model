@@ -4,6 +4,7 @@ package org.vgu.se.sql.impl;
 
 import org.eclipse.emf.common.notify.Notification;
 
+import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
@@ -31,7 +32,7 @@ import org.vgu.se.sql.SqlPackage;
 public abstract class EBinaryExpressionImpl extends MinimalEObjectImpl.Container
     implements EBinaryExpression {
     /**
-     * The cached value of the '{@link #getLeftExpression() <em>Left Expression</em>}' reference.
+     * The cached value of the '{@link #getLeftExpression() <em>Left Expression</em>}' containment reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @see #getLeftExpression()
@@ -41,7 +42,7 @@ public abstract class EBinaryExpressionImpl extends MinimalEObjectImpl.Container
     protected EExpression leftExpression;
 
     /**
-     * The cached value of the '{@link #getRightExpression() <em>Right Expression</em>}' reference.
+     * The cached value of the '{@link #getRightExpression() <em>Right Expression</em>}' containment reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @see #getRightExpression()
@@ -76,16 +77,6 @@ public abstract class EBinaryExpressionImpl extends MinimalEObjectImpl.Container
      */
     @Override
     public EExpression getLeftExpression() {
-        if (leftExpression != null && leftExpression.eIsProxy()) {
-            InternalEObject oldLeftExpression = (InternalEObject) leftExpression;
-            leftExpression = (EExpression) eResolveProxy(oldLeftExpression);
-            if (leftExpression != oldLeftExpression) {
-                if (eNotificationRequired())
-                    eNotify(new ENotificationImpl(this, Notification.RESOLVE,
-                        SqlPackage.EBINARY_EXPRESSION__LEFT_EXPRESSION,
-                        oldLeftExpression, leftExpression));
-            }
-        }
         return leftExpression;
     }
 
@@ -94,8 +85,21 @@ public abstract class EBinaryExpressionImpl extends MinimalEObjectImpl.Container
      * <!-- end-user-doc -->
      * @generated
      */
-    public EExpression basicGetLeftExpression() {
-        return leftExpression;
+    public NotificationChain basicSetLeftExpression(
+        EExpression newLeftExpression, NotificationChain msgs) {
+        EExpression oldLeftExpression = leftExpression;
+        leftExpression = newLeftExpression;
+        if (eNotificationRequired()) {
+            ENotificationImpl notification = new ENotificationImpl(this,
+                Notification.SET,
+                SqlPackage.EBINARY_EXPRESSION__LEFT_EXPRESSION,
+                oldLeftExpression, newLeftExpression);
+            if (msgs == null)
+                msgs = notification;
+            else
+                msgs.add(notification);
+        }
+        return msgs;
     }
 
     /**
@@ -105,12 +109,25 @@ public abstract class EBinaryExpressionImpl extends MinimalEObjectImpl.Container
      */
     @Override
     public void setLeftExpression(EExpression newLeftExpression) {
-        EExpression oldLeftExpression = leftExpression;
-        leftExpression = newLeftExpression;
-        if (eNotificationRequired())
+        if (newLeftExpression != leftExpression) {
+            NotificationChain msgs = null;
+            if (leftExpression != null)
+                msgs = ((InternalEObject) leftExpression).eInverseRemove(this,
+                    EOPPOSITE_FEATURE_BASE
+                        - SqlPackage.EBINARY_EXPRESSION__LEFT_EXPRESSION,
+                    null, msgs);
+            if (newLeftExpression != null)
+                msgs = ((InternalEObject) newLeftExpression).eInverseAdd(this,
+                    EOPPOSITE_FEATURE_BASE
+                        - SqlPackage.EBINARY_EXPRESSION__LEFT_EXPRESSION,
+                    null, msgs);
+            msgs = basicSetLeftExpression(newLeftExpression, msgs);
+            if (msgs != null)
+                msgs.dispatch();
+        } else if (eNotificationRequired())
             eNotify(new ENotificationImpl(this, Notification.SET,
                 SqlPackage.EBINARY_EXPRESSION__LEFT_EXPRESSION,
-                oldLeftExpression, leftExpression));
+                newLeftExpression, newLeftExpression));
     }
 
     /**
@@ -120,16 +137,6 @@ public abstract class EBinaryExpressionImpl extends MinimalEObjectImpl.Container
      */
     @Override
     public EExpression getRightExpression() {
-        if (rightExpression != null && rightExpression.eIsProxy()) {
-            InternalEObject oldRightExpression = (InternalEObject) rightExpression;
-            rightExpression = (EExpression) eResolveProxy(oldRightExpression);
-            if (rightExpression != oldRightExpression) {
-                if (eNotificationRequired())
-                    eNotify(new ENotificationImpl(this, Notification.RESOLVE,
-                        SqlPackage.EBINARY_EXPRESSION__RIGHT_EXPRESSION,
-                        oldRightExpression, rightExpression));
-            }
-        }
         return rightExpression;
     }
 
@@ -138,8 +145,21 @@ public abstract class EBinaryExpressionImpl extends MinimalEObjectImpl.Container
      * <!-- end-user-doc -->
      * @generated
      */
-    public EExpression basicGetRightExpression() {
-        return rightExpression;
+    public NotificationChain basicSetRightExpression(
+        EExpression newRightExpression, NotificationChain msgs) {
+        EExpression oldRightExpression = rightExpression;
+        rightExpression = newRightExpression;
+        if (eNotificationRequired()) {
+            ENotificationImpl notification = new ENotificationImpl(this,
+                Notification.SET,
+                SqlPackage.EBINARY_EXPRESSION__RIGHT_EXPRESSION,
+                oldRightExpression, newRightExpression);
+            if (msgs == null)
+                msgs = notification;
+            else
+                msgs.add(notification);
+        }
+        return msgs;
     }
 
     /**
@@ -149,12 +169,42 @@ public abstract class EBinaryExpressionImpl extends MinimalEObjectImpl.Container
      */
     @Override
     public void setRightExpression(EExpression newRightExpression) {
-        EExpression oldRightExpression = rightExpression;
-        rightExpression = newRightExpression;
-        if (eNotificationRequired())
+        if (newRightExpression != rightExpression) {
+            NotificationChain msgs = null;
+            if (rightExpression != null)
+                msgs = ((InternalEObject) rightExpression).eInverseRemove(this,
+                    EOPPOSITE_FEATURE_BASE
+                        - SqlPackage.EBINARY_EXPRESSION__RIGHT_EXPRESSION,
+                    null, msgs);
+            if (newRightExpression != null)
+                msgs = ((InternalEObject) newRightExpression).eInverseAdd(this,
+                    EOPPOSITE_FEATURE_BASE
+                        - SqlPackage.EBINARY_EXPRESSION__RIGHT_EXPRESSION,
+                    null, msgs);
+            msgs = basicSetRightExpression(newRightExpression, msgs);
+            if (msgs != null)
+                msgs.dispatch();
+        } else if (eNotificationRequired())
             eNotify(new ENotificationImpl(this, Notification.SET,
                 SqlPackage.EBINARY_EXPRESSION__RIGHT_EXPRESSION,
-                oldRightExpression, rightExpression));
+                newRightExpression, newRightExpression));
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public NotificationChain eInverseRemove(InternalEObject otherEnd,
+        int featureID, NotificationChain msgs) {
+        switch (featureID) {
+        case SqlPackage.EBINARY_EXPRESSION__LEFT_EXPRESSION:
+            return basicSetLeftExpression(null, msgs);
+        case SqlPackage.EBINARY_EXPRESSION__RIGHT_EXPRESSION:
+            return basicSetRightExpression(null, msgs);
+        }
+        return super.eInverseRemove(otherEnd, featureID, msgs);
     }
 
     /**
@@ -166,13 +216,9 @@ public abstract class EBinaryExpressionImpl extends MinimalEObjectImpl.Container
     public Object eGet(int featureID, boolean resolve, boolean coreType) {
         switch (featureID) {
         case SqlPackage.EBINARY_EXPRESSION__LEFT_EXPRESSION:
-            if (resolve)
-                return getLeftExpression();
-            return basicGetLeftExpression();
+            return getLeftExpression();
         case SqlPackage.EBINARY_EXPRESSION__RIGHT_EXPRESSION:
-            if (resolve)
-                return getRightExpression();
-            return basicGetRightExpression();
+            return getRightExpression();
         }
         return super.eGet(featureID, resolve, coreType);
     }

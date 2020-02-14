@@ -21,44 +21,44 @@ package org.vgu.se.sql;
  */
 public interface ESelectExpressionItem extends ESelectItem {
     /**
-     * Returns the value of the '<em><b>Alias</b></em>' reference.
+     * Returns the value of the '<em><b>Alias</b></em>' containment reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return the value of the '<em>Alias</em>' reference.
+     * @return the value of the '<em>Alias</em>' containment reference.
      * @see #setAlias(EAlias)
      * @see org.vgu.se.sql.SqlPackage#getESelectExpressionItem_Alias()
-     * @model
+     * @model containment="true"
      * @generated
      */
     EAlias getAlias();
 
     /**
-     * Sets the value of the '{@link org.vgu.se.sql.ESelectExpressionItem#getAlias <em>Alias</em>}' reference.
+     * Sets the value of the '{@link org.vgu.se.sql.ESelectExpressionItem#getAlias <em>Alias</em>}' containment reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @param value the new value of the '<em>Alias</em>' reference.
+     * @param value the new value of the '<em>Alias</em>' containment reference.
      * @see #getAlias()
      * @generated
      */
     void setAlias(EAlias value);
 
     /**
-     * Returns the value of the '<em><b>Expression</b></em>' reference.
+     * Returns the value of the '<em><b>Expression</b></em>' containment reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return the value of the '<em>Expression</em>' reference.
+     * @return the value of the '<em>Expression</em>' containment reference.
      * @see #setExpression(EExpression)
      * @see org.vgu.se.sql.SqlPackage#getESelectExpressionItem_Expression()
-     * @model required="true"
+     * @model containment="true" required="true"
      * @generated
      */
     EExpression getExpression();
 
     /**
-     * Sets the value of the '{@link org.vgu.se.sql.ESelectExpressionItem#getExpression <em>Expression</em>}' reference.
+     * Sets the value of the '{@link org.vgu.se.sql.ESelectExpressionItem#getExpression <em>Expression</em>}' containment reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @param value the new value of the '<em>Expression</em>' reference.
+     * @param value the new value of the '<em>Expression</em>' containment reference.
      * @see #getExpression()
      * @generated
      */

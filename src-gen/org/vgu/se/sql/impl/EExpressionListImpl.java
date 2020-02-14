@@ -15,40 +15,40 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 import org.vgu.se.sql.EExpression;
-import org.vgu.se.sql.EGroupByElement;
+import org.vgu.se.sql.EExpressionList;
 import org.vgu.se.sql.SqlPackage;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>EGroup By Element</b></em>'.
+ * An implementation of the model object '<em><b>EExpression List</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.vgu.se.sql.impl.EGroupByElementImpl#getGroupByExpressions <em>Group By Expressions</em>}</li>
+ *   <li>{@link org.vgu.se.sql.impl.EExpressionListImpl#getExpressions <em>Expressions</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class EGroupByElementImpl extends MinimalEObjectImpl.Container
-    implements EGroupByElement {
+public class EExpressionListImpl extends MinimalEObjectImpl.Container
+    implements EExpressionList {
     /**
-     * The cached value of the '{@link #getGroupByExpressions() <em>Group By Expressions</em>}' containment reference list.
+     * The cached value of the '{@link #getExpressions() <em>Expressions</em>}' containment reference list.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getGroupByExpressions()
+     * @see #getExpressions()
      * @generated
      * @ordered
      */
-    protected EList<EExpression> groupByExpressions;
+    protected EList<EExpression> expressions;
 
     /**
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    protected EGroupByElementImpl() {
+    protected EExpressionListImpl() {
         super();
     }
 
@@ -59,7 +59,7 @@ public class EGroupByElementImpl extends MinimalEObjectImpl.Container
      */
     @Override
     protected EClass eStaticClass() {
-        return SqlPackage.Literals.EGROUP_BY_ELEMENT;
+        return SqlPackage.Literals.EEXPRESSION_LIST;
     }
 
     /**
@@ -68,13 +68,13 @@ public class EGroupByElementImpl extends MinimalEObjectImpl.Container
      * @generated
      */
     @Override
-    public EList<EExpression> getGroupByExpressions() {
-        if (groupByExpressions == null) {
-            groupByExpressions = new EObjectContainmentEList<EExpression>(
+    public EList<EExpression> getExpressions() {
+        if (expressions == null) {
+            expressions = new EObjectContainmentEList<EExpression>(
                 EExpression.class, this,
-                SqlPackage.EGROUP_BY_ELEMENT__GROUP_BY_EXPRESSIONS);
+                SqlPackage.EEXPRESSION_LIST__EXPRESSIONS);
         }
-        return groupByExpressions;
+        return expressions;
     }
 
     /**
@@ -86,9 +86,9 @@ public class EGroupByElementImpl extends MinimalEObjectImpl.Container
     public NotificationChain eInverseRemove(InternalEObject otherEnd,
         int featureID, NotificationChain msgs) {
         switch (featureID) {
-        case SqlPackage.EGROUP_BY_ELEMENT__GROUP_BY_EXPRESSIONS:
-            return ((InternalEList<?>) getGroupByExpressions())
-                .basicRemove(otherEnd, msgs);
+        case SqlPackage.EEXPRESSION_LIST__EXPRESSIONS:
+            return ((InternalEList<?>) getExpressions()).basicRemove(otherEnd,
+                msgs);
         }
         return super.eInverseRemove(otherEnd, featureID, msgs);
     }
@@ -101,8 +101,8 @@ public class EGroupByElementImpl extends MinimalEObjectImpl.Container
     @Override
     public Object eGet(int featureID, boolean resolve, boolean coreType) {
         switch (featureID) {
-        case SqlPackage.EGROUP_BY_ELEMENT__GROUP_BY_EXPRESSIONS:
-            return getGroupByExpressions();
+        case SqlPackage.EEXPRESSION_LIST__EXPRESSIONS:
+            return getExpressions();
         }
         return super.eGet(featureID, resolve, coreType);
     }
@@ -116,9 +116,9 @@ public class EGroupByElementImpl extends MinimalEObjectImpl.Container
     @Override
     public void eSet(int featureID, Object newValue) {
         switch (featureID) {
-        case SqlPackage.EGROUP_BY_ELEMENT__GROUP_BY_EXPRESSIONS:
-            getGroupByExpressions().clear();
-            getGroupByExpressions()
+        case SqlPackage.EEXPRESSION_LIST__EXPRESSIONS:
+            getExpressions().clear();
+            getExpressions()
                 .addAll((Collection<? extends EExpression>) newValue);
             return;
         }
@@ -133,8 +133,8 @@ public class EGroupByElementImpl extends MinimalEObjectImpl.Container
     @Override
     public void eUnset(int featureID) {
         switch (featureID) {
-        case SqlPackage.EGROUP_BY_ELEMENT__GROUP_BY_EXPRESSIONS:
-            getGroupByExpressions().clear();
+        case SqlPackage.EEXPRESSION_LIST__EXPRESSIONS:
+            getExpressions().clear();
             return;
         }
         super.eUnset(featureID);
@@ -148,10 +148,10 @@ public class EGroupByElementImpl extends MinimalEObjectImpl.Container
     @Override
     public boolean eIsSet(int featureID) {
         switch (featureID) {
-        case SqlPackage.EGROUP_BY_ELEMENT__GROUP_BY_EXPRESSIONS:
-            return groupByExpressions != null && !groupByExpressions.isEmpty();
+        case SqlPackage.EEXPRESSION_LIST__EXPRESSIONS:
+            return expressions != null && !expressions.isEmpty();
         }
         return super.eIsSet(featureID);
     }
 
-} //EGroupByElementImpl
+} //EExpressionListImpl

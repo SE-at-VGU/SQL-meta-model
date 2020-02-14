@@ -21,44 +21,44 @@ package org.vgu.se.sql;
  */
 public interface EBinaryExpression extends EExpression {
     /**
-     * Returns the value of the '<em><b>Left Expression</b></em>' reference.
+     * Returns the value of the '<em><b>Left Expression</b></em>' containment reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return the value of the '<em>Left Expression</em>' reference.
+     * @return the value of the '<em>Left Expression</em>' containment reference.
      * @see #setLeftExpression(EExpression)
      * @see org.vgu.se.sql.SqlPackage#getEBinaryExpression_LeftExpression()
-     * @model required="true"
+     * @model containment="true" required="true"
      * @generated
      */
     EExpression getLeftExpression();
 
     /**
-     * Sets the value of the '{@link org.vgu.se.sql.EBinaryExpression#getLeftExpression <em>Left Expression</em>}' reference.
+     * Sets the value of the '{@link org.vgu.se.sql.EBinaryExpression#getLeftExpression <em>Left Expression</em>}' containment reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @param value the new value of the '<em>Left Expression</em>' reference.
+     * @param value the new value of the '<em>Left Expression</em>' containment reference.
      * @see #getLeftExpression()
      * @generated
      */
     void setLeftExpression(EExpression value);
 
     /**
-     * Returns the value of the '<em><b>Right Expression</b></em>' reference.
+     * Returns the value of the '<em><b>Right Expression</b></em>' containment reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return the value of the '<em>Right Expression</em>' reference.
+     * @return the value of the '<em>Right Expression</em>' containment reference.
      * @see #setRightExpression(EExpression)
      * @see org.vgu.se.sql.SqlPackage#getEBinaryExpression_RightExpression()
-     * @model required="true"
+     * @model containment="true" required="true"
      * @generated
      */
     EExpression getRightExpression();
 
     /**
-     * Sets the value of the '{@link org.vgu.se.sql.EBinaryExpression#getRightExpression <em>Right Expression</em>}' reference.
+     * Sets the value of the '{@link org.vgu.se.sql.EBinaryExpression#getRightExpression <em>Right Expression</em>}' containment reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @param value the new value of the '<em>Right Expression</em>' reference.
+     * @param value the new value of the '<em>Right Expression</em>' containment reference.
      * @see #getRightExpression()
      * @generated
      */

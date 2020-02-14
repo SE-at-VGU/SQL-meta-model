@@ -95,7 +95,7 @@ public interface SqlPackage extends EPackage {
     int ESELECT = 1;
 
     /**
-     * The feature id for the '<em><b>Select Body</b></em>' reference.
+     * The feature id for the '<em><b>Select Body</b></em>' containment reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
@@ -160,7 +160,7 @@ public interface SqlPackage extends EPackage {
     int EPLAIN_SELECT = 3;
 
     /**
-     * The feature id for the '<em><b>Distinct</b></em>' reference.
+     * The feature id for the '<em><b>Distinct</b></em>' containment reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
@@ -169,7 +169,7 @@ public interface SqlPackage extends EPackage {
     int EPLAIN_SELECT__DISTINCT = ESELECT_BODY_FEATURE_COUNT + 0;
 
     /**
-     * The feature id for the '<em><b>Select Items</b></em>' reference list.
+     * The feature id for the '<em><b>Select Items</b></em>' containment reference list.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
@@ -178,7 +178,7 @@ public interface SqlPackage extends EPackage {
     int EPLAIN_SELECT__SELECT_ITEMS = ESELECT_BODY_FEATURE_COUNT + 1;
 
     /**
-     * The feature id for the '<em><b>From Item</b></em>' reference.
+     * The feature id for the '<em><b>From Item</b></em>' containment reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
@@ -187,7 +187,7 @@ public interface SqlPackage extends EPackage {
     int EPLAIN_SELECT__FROM_ITEM = ESELECT_BODY_FEATURE_COUNT + 2;
 
     /**
-     * The feature id for the '<em><b>Joins</b></em>' reference.
+     * The feature id for the '<em><b>Joins</b></em>' containment reference list.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
@@ -196,7 +196,7 @@ public interface SqlPackage extends EPackage {
     int EPLAIN_SELECT__JOINS = ESELECT_BODY_FEATURE_COUNT + 3;
 
     /**
-     * The feature id for the '<em><b>Where</b></em>' reference.
+     * The feature id for the '<em><b>Where</b></em>' containment reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
@@ -205,7 +205,7 @@ public interface SqlPackage extends EPackage {
     int EPLAIN_SELECT__WHERE = ESELECT_BODY_FEATURE_COUNT + 4;
 
     /**
-     * The feature id for the '<em><b>Group By</b></em>' reference.
+     * The feature id for the '<em><b>Group By</b></em>' containment reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
@@ -214,7 +214,7 @@ public interface SqlPackage extends EPackage {
     int EPLAIN_SELECT__GROUP_BY = ESELECT_BODY_FEATURE_COUNT + 5;
 
     /**
-     * The feature id for the '<em><b>Having</b></em>' reference.
+     * The feature id for the '<em><b>Having</b></em>' containment reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
@@ -260,7 +260,7 @@ public interface SqlPackage extends EPackage {
     int EDISTINCT__USE_UNIQUE = 0;
 
     /**
-     * The feature id for the '<em><b>On Select Items</b></em>' reference list.
+     * The feature id for the '<em><b>On Select Items</b></em>' containment reference list.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
@@ -297,7 +297,7 @@ public interface SqlPackage extends EPackage {
     int EGROUP_BY_ELEMENT = 5;
 
     /**
-     * The feature id for the '<em><b>Group By Expressions</b></em>' reference list.
+     * The feature id for the '<em><b>Group By Expressions</b></em>' containment reference list.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
@@ -433,7 +433,7 @@ public interface SqlPackage extends EPackage {
     int EJOIN__APPLY = 10;
 
     /**
-     * The feature id for the '<em><b>Right Item</b></em>' reference.
+     * The feature id for the '<em><b>Right Item</b></em>' containment reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
@@ -442,7 +442,7 @@ public interface SqlPackage extends EPackage {
     int EJOIN__RIGHT_ITEM = 11;
 
     /**
-     * The feature id for the '<em><b>On Expression</b></em>' reference.
+     * The feature id for the '<em><b>On Expression</b></em>' containment reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
@@ -544,7 +544,7 @@ public interface SqlPackage extends EPackage {
     int EBINARY_EXPRESSION = 9;
 
     /**
-     * The feature id for the '<em><b>Left Expression</b></em>' reference.
+     * The feature id for the '<em><b>Left Expression</b></em>' containment reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
@@ -553,7 +553,7 @@ public interface SqlPackage extends EPackage {
     int EBINARY_EXPRESSION__LEFT_EXPRESSION = EEXPRESSION_FEATURE_COUNT + 0;
 
     /**
-     * The feature id for the '<em><b>Right Expression</b></em>' reference.
+     * The feature id for the '<em><b>Right Expression</b></em>' containment reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
@@ -590,7 +590,7 @@ public interface SqlPackage extends EPackage {
     int EAND_EXPRESSION = 10;
 
     /**
-     * The feature id for the '<em><b>Left Expression</b></em>' reference.
+     * The feature id for the '<em><b>Left Expression</b></em>' containment reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
@@ -599,7 +599,7 @@ public interface SqlPackage extends EPackage {
     int EAND_EXPRESSION__LEFT_EXPRESSION = EBINARY_EXPRESSION__LEFT_EXPRESSION;
 
     /**
-     * The feature id for the '<em><b>Right Expression</b></em>' reference.
+     * The feature id for the '<em><b>Right Expression</b></em>' containment reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
@@ -637,7 +637,7 @@ public interface SqlPackage extends EPackage {
     int EOR_EXPRESSION = 11;
 
     /**
-     * The feature id for the '<em><b>Left Expression</b></em>' reference.
+     * The feature id for the '<em><b>Left Expression</b></em>' containment reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
@@ -646,7 +646,7 @@ public interface SqlPackage extends EPackage {
     int EOR_EXPRESSION__LEFT_EXPRESSION = EBINARY_EXPRESSION__LEFT_EXPRESSION;
 
     /**
-     * The feature id for the '<em><b>Right Expression</b></em>' reference.
+     * The feature id for the '<em><b>Right Expression</b></em>' containment reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
@@ -683,7 +683,7 @@ public interface SqlPackage extends EPackage {
     int ECOMPARISON_OPERATOR = 12;
 
     /**
-     * The feature id for the '<em><b>Left Expression</b></em>' reference.
+     * The feature id for the '<em><b>Left Expression</b></em>' containment reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
@@ -692,7 +692,7 @@ public interface SqlPackage extends EPackage {
     int ECOMPARISON_OPERATOR__LEFT_EXPRESSION = EBINARY_EXPRESSION__LEFT_EXPRESSION;
 
     /**
-     * The feature id for the '<em><b>Right Expression</b></em>' reference.
+     * The feature id for the '<em><b>Right Expression</b></em>' containment reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
@@ -740,7 +740,7 @@ public interface SqlPackage extends EPackage {
     int EEQUALS_TO = 13;
 
     /**
-     * The feature id for the '<em><b>Left Expression</b></em>' reference.
+     * The feature id for the '<em><b>Left Expression</b></em>' containment reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
@@ -749,7 +749,7 @@ public interface SqlPackage extends EPackage {
     int EEQUALS_TO__LEFT_EXPRESSION = ECOMPARISON_OPERATOR__LEFT_EXPRESSION;
 
     /**
-     * The feature id for the '<em><b>Right Expression</b></em>' reference.
+     * The feature id for the '<em><b>Right Expression</b></em>' containment reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
@@ -795,7 +795,7 @@ public interface SqlPackage extends EPackage {
     int EGREATER_THAN = 14;
 
     /**
-     * The feature id for the '<em><b>Left Expression</b></em>' reference.
+     * The feature id for the '<em><b>Left Expression</b></em>' containment reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
@@ -804,7 +804,7 @@ public interface SqlPackage extends EPackage {
     int EGREATER_THAN__LEFT_EXPRESSION = ECOMPARISON_OPERATOR__LEFT_EXPRESSION;
 
     /**
-     * The feature id for the '<em><b>Right Expression</b></em>' reference.
+     * The feature id for the '<em><b>Right Expression</b></em>' containment reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
@@ -851,7 +851,7 @@ public interface SqlPackage extends EPackage {
     int EGREATER_THAN_EQUALS = 15;
 
     /**
-     * The feature id for the '<em><b>Left Expression</b></em>' reference.
+     * The feature id for the '<em><b>Left Expression</b></em>' containment reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
@@ -860,7 +860,7 @@ public interface SqlPackage extends EPackage {
     int EGREATER_THAN_EQUALS__LEFT_EXPRESSION = ECOMPARISON_OPERATOR__LEFT_EXPRESSION;
 
     /**
-     * The feature id for the '<em><b>Right Expression</b></em>' reference.
+     * The feature id for the '<em><b>Right Expression</b></em>' containment reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
@@ -908,7 +908,7 @@ public interface SqlPackage extends EPackage {
     int EMINOR_THAN = 16;
 
     /**
-     * The feature id for the '<em><b>Left Expression</b></em>' reference.
+     * The feature id for the '<em><b>Left Expression</b></em>' containment reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
@@ -917,7 +917,7 @@ public interface SqlPackage extends EPackage {
     int EMINOR_THAN__LEFT_EXPRESSION = ECOMPARISON_OPERATOR__LEFT_EXPRESSION;
 
     /**
-     * The feature id for the '<em><b>Right Expression</b></em>' reference.
+     * The feature id for the '<em><b>Right Expression</b></em>' containment reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
@@ -963,7 +963,7 @@ public interface SqlPackage extends EPackage {
     int EMINOR_THAN_EQUALS = 17;
 
     /**
-     * The feature id for the '<em><b>Left Expression</b></em>' reference.
+     * The feature id for the '<em><b>Left Expression</b></em>' containment reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
@@ -972,7 +972,7 @@ public interface SqlPackage extends EPackage {
     int EMINOR_THAN_EQUALS__LEFT_EXPRESSION = ECOMPARISON_OPERATOR__LEFT_EXPRESSION;
 
     /**
-     * The feature id for the '<em><b>Right Expression</b></em>' reference.
+     * The feature id for the '<em><b>Right Expression</b></em>' containment reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
@@ -1020,7 +1020,7 @@ public interface SqlPackage extends EPackage {
     int ENOT_EQUALS_TO = 18;
 
     /**
-     * The feature id for the '<em><b>Left Expression</b></em>' reference.
+     * The feature id for the '<em><b>Left Expression</b></em>' containment reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
@@ -1029,7 +1029,7 @@ public interface SqlPackage extends EPackage {
     int ENOT_EQUALS_TO__LEFT_EXPRESSION = ECOMPARISON_OPERATOR__LEFT_EXPRESSION;
 
     /**
-     * The feature id for the '<em><b>Right Expression</b></em>' reference.
+     * The feature id for the '<em><b>Right Expression</b></em>' containment reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
@@ -1132,7 +1132,7 @@ public interface SqlPackage extends EPackage {
     int ESELECT_EXPRESSION_ITEM = 21;
 
     /**
-     * The feature id for the '<em><b>Alias</b></em>' reference.
+     * The feature id for the '<em><b>Alias</b></em>' containment reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
@@ -1141,7 +1141,7 @@ public interface SqlPackage extends EPackage {
     int ESELECT_EXPRESSION_ITEM__ALIAS = ESELECT_ITEM_FEATURE_COUNT + 0;
 
     /**
-     * The feature id for the '<em><b>Expression</b></em>' reference.
+     * The feature id for the '<em><b>Expression</b></em>' containment reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
@@ -1207,7 +1207,7 @@ public interface SqlPackage extends EPackage {
     int ETABLE = 23;
 
     /**
-     * The feature id for the '<em><b>Alias</b></em>' reference.
+     * The feature id for the '<em><b>Alias</b></em>' containment reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
@@ -1253,7 +1253,7 @@ public interface SqlPackage extends EPackage {
     int ESUB_SELECT = 24;
 
     /**
-     * The feature id for the '<em><b>Alias</b></em>' reference.
+     * The feature id for the '<em><b>Alias</b></em>' containment reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
@@ -1262,7 +1262,7 @@ public interface SqlPackage extends EPackage {
     int ESUB_SELECT__ALIAS = EFROM_ITEM_FEATURE_COUNT + 0;
 
     /**
-     * The feature id for the '<em><b>Select Body</b></em>' reference.
+     * The feature id for the '<em><b>Select Body</b></em>' containment reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
@@ -1299,7 +1299,7 @@ public interface SqlPackage extends EPackage {
     int ENOT_EXPRESSION = 25;
 
     /**
-     * The feature id for the '<em><b>Expression</b></em>' reference.
+     * The feature id for the '<em><b>Expression</b></em>' containment reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
@@ -1326,6 +1326,402 @@ public interface SqlPackage extends EPackage {
     int ENOT_EXPRESSION_OPERATION_COUNT = EEXPRESSION_OPERATION_COUNT + 0;
 
     /**
+     * The meta object id for the '{@link org.vgu.se.sql.impl.ELongValueImpl <em>ELong Value</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.vgu.se.sql.impl.ELongValueImpl
+     * @see org.vgu.se.sql.impl.SqlPackageImpl#getELongValue()
+     * @generated
+     */
+    int ELONG_VALUE = 26;
+
+    /**
+     * The feature id for the '<em><b>Value</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int ELONG_VALUE__VALUE = EEXPRESSION_FEATURE_COUNT + 0;
+
+    /**
+     * The number of structural features of the '<em>ELong Value</em>' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int ELONG_VALUE_FEATURE_COUNT = EEXPRESSION_FEATURE_COUNT + 1;
+
+    /**
+     * The number of operations of the '<em>ELong Value</em>' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int ELONG_VALUE_OPERATION_COUNT = EEXPRESSION_OPERATION_COUNT + 0;
+
+    /**
+     * The meta object id for the '{@link org.vgu.se.sql.impl.ENullValueImpl <em>ENull Value</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.vgu.se.sql.impl.ENullValueImpl
+     * @see org.vgu.se.sql.impl.SqlPackageImpl#getENullValue()
+     * @generated
+     */
+    int ENULL_VALUE = 27;
+
+    /**
+     * The number of structural features of the '<em>ENull Value</em>' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int ENULL_VALUE_FEATURE_COUNT = EEXPRESSION_FEATURE_COUNT + 0;
+
+    /**
+     * The number of operations of the '<em>ENull Value</em>' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int ENULL_VALUE_OPERATION_COUNT = EEXPRESSION_OPERATION_COUNT + 0;
+
+    /**
+     * The meta object id for the '{@link org.vgu.se.sql.impl.EIsNullExpressionImpl <em>EIs Null Expression</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.vgu.se.sql.impl.EIsNullExpressionImpl
+     * @see org.vgu.se.sql.impl.SqlPackageImpl#getEIsNullExpression()
+     * @generated
+     */
+    int EIS_NULL_EXPRESSION = 28;
+
+    /**
+     * The feature id for the '<em><b>Not</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int EIS_NULL_EXPRESSION__NOT = EEXPRESSION_FEATURE_COUNT + 0;
+
+    /**
+     * The feature id for the '<em><b>Left Expression</b></em>' containment reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int EIS_NULL_EXPRESSION__LEFT_EXPRESSION = EEXPRESSION_FEATURE_COUNT + 1;
+
+    /**
+     * The number of structural features of the '<em>EIs Null Expression</em>' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int EIS_NULL_EXPRESSION_FEATURE_COUNT = EEXPRESSION_FEATURE_COUNT + 2;
+
+    /**
+     * The number of operations of the '<em>EIs Null Expression</em>' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int EIS_NULL_EXPRESSION_OPERATION_COUNT = EEXPRESSION_OPERATION_COUNT + 0;
+
+    /**
+     * The meta object id for the '{@link org.vgu.se.sql.impl.EFunctionImpl <em>EFunction</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.vgu.se.sql.impl.EFunctionImpl
+     * @see org.vgu.se.sql.impl.SqlPackageImpl#getEFunction()
+     * @generated
+     */
+    int EFUNCTION = 29;
+
+    /**
+     * The feature id for the '<em><b>Name</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int EFUNCTION__NAME = EEXPRESSION_FEATURE_COUNT + 0;
+
+    /**
+     * The feature id for the '<em><b>All Columns</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int EFUNCTION__ALL_COLUMNS = EEXPRESSION_FEATURE_COUNT + 1;
+
+    /**
+     * The feature id for the '<em><b>Distinct</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int EFUNCTION__DISTINCT = EEXPRESSION_FEATURE_COUNT + 2;
+
+    /**
+     * The feature id for the '<em><b>Parameters</b></em>' containment reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int EFUNCTION__PARAMETERS = EEXPRESSION_FEATURE_COUNT + 3;
+
+    /**
+     * The number of structural features of the '<em>EFunction</em>' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int EFUNCTION_FEATURE_COUNT = EEXPRESSION_FEATURE_COUNT + 4;
+
+    /**
+     * The number of operations of the '<em>EFunction</em>' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int EFUNCTION_OPERATION_COUNT = EEXPRESSION_OPERATION_COUNT + 0;
+
+    /**
+     * The meta object id for the '{@link org.vgu.se.sql.impl.EColumnImpl <em>EColumn</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.vgu.se.sql.impl.EColumnImpl
+     * @see org.vgu.se.sql.impl.SqlPackageImpl#getEColumn()
+     * @generated
+     */
+    int ECOLUMN = 30;
+
+    /**
+     * The feature id for the '<em><b>Column Name</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int ECOLUMN__COLUMN_NAME = EEXPRESSION_FEATURE_COUNT + 0;
+
+    /**
+     * The feature id for the '<em><b>Table</b></em>' containment reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int ECOLUMN__TABLE = EEXPRESSION_FEATURE_COUNT + 1;
+
+    /**
+     * The number of structural features of the '<em>EColumn</em>' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int ECOLUMN_FEATURE_COUNT = EEXPRESSION_FEATURE_COUNT + 2;
+
+    /**
+     * The number of operations of the '<em>EColumn</em>' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int ECOLUMN_OPERATION_COUNT = EEXPRESSION_OPERATION_COUNT + 0;
+
+    /**
+     * The meta object id for the '{@link org.vgu.se.sql.impl.ECaseExpressionImpl <em>ECase Expression</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.vgu.se.sql.impl.ECaseExpressionImpl
+     * @see org.vgu.se.sql.impl.SqlPackageImpl#getECaseExpression()
+     * @generated
+     */
+    int ECASE_EXPRESSION = 31;
+
+    /**
+     * The feature id for the '<em><b>Switch Expression</b></em>' containment reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int ECASE_EXPRESSION__SWITCH_EXPRESSION = EEXPRESSION_FEATURE_COUNT + 0;
+
+    /**
+     * The feature id for the '<em><b>Else Expression</b></em>' containment reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int ECASE_EXPRESSION__ELSE_EXPRESSION = EEXPRESSION_FEATURE_COUNT + 1;
+
+    /**
+     * The feature id for the '<em><b>When Clauses</b></em>' containment reference list.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int ECASE_EXPRESSION__WHEN_CLAUSES = EEXPRESSION_FEATURE_COUNT + 2;
+
+    /**
+     * The number of structural features of the '<em>ECase Expression</em>' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int ECASE_EXPRESSION_FEATURE_COUNT = EEXPRESSION_FEATURE_COUNT + 3;
+
+    /**
+     * The number of operations of the '<em>ECase Expression</em>' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int ECASE_EXPRESSION_OPERATION_COUNT = EEXPRESSION_OPERATION_COUNT + 0;
+
+    /**
+     * The meta object id for the '{@link org.vgu.se.sql.impl.EWhenClauseImpl <em>EWhen Clause</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.vgu.se.sql.impl.EWhenClauseImpl
+     * @see org.vgu.se.sql.impl.SqlPackageImpl#getEWhenClause()
+     * @generated
+     */
+    int EWHEN_CLAUSE = 32;
+
+    /**
+     * The feature id for the '<em><b>When Expression</b></em>' containment reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int EWHEN_CLAUSE__WHEN_EXPRESSION = EEXPRESSION_FEATURE_COUNT + 0;
+
+    /**
+     * The feature id for the '<em><b>Then Expression</b></em>' containment reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int EWHEN_CLAUSE__THEN_EXPRESSION = EEXPRESSION_FEATURE_COUNT + 1;
+
+    /**
+     * The number of structural features of the '<em>EWhen Clause</em>' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int EWHEN_CLAUSE_FEATURE_COUNT = EEXPRESSION_FEATURE_COUNT + 2;
+
+    /**
+     * The number of operations of the '<em>EWhen Clause</em>' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int EWHEN_CLAUSE_OPERATION_COUNT = EEXPRESSION_OPERATION_COUNT + 0;
+
+    /**
+     * The meta object id for the '{@link org.vgu.se.sql.impl.EStringValueImpl <em>EString Value</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.vgu.se.sql.impl.EStringValueImpl
+     * @see org.vgu.se.sql.impl.SqlPackageImpl#getEStringValue()
+     * @generated
+     */
+    int ESTRING_VALUE = 33;
+
+    /**
+     * The feature id for the '<em><b>Value</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int ESTRING_VALUE__VALUE = EEXPRESSION_FEATURE_COUNT + 0;
+
+    /**
+     * The number of structural features of the '<em>EString Value</em>' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int ESTRING_VALUE_FEATURE_COUNT = EEXPRESSION_FEATURE_COUNT + 1;
+
+    /**
+     * The number of operations of the '<em>EString Value</em>' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int ESTRING_VALUE_OPERATION_COUNT = EEXPRESSION_OPERATION_COUNT + 0;
+
+    /**
+     * The meta object id for the '{@link org.vgu.se.sql.impl.EExpressionListImpl <em>EExpression List</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.vgu.se.sql.impl.EExpressionListImpl
+     * @see org.vgu.se.sql.impl.SqlPackageImpl#getEExpressionList()
+     * @generated
+     */
+    int EEXPRESSION_LIST = 34;
+
+    /**
+     * The feature id for the '<em><b>Expressions</b></em>' containment reference list.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int EEXPRESSION_LIST__EXPRESSIONS = 0;
+
+    /**
+     * The number of structural features of the '<em>EExpression List</em>' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int EEXPRESSION_LIST_FEATURE_COUNT = 1;
+
+    /**
+     * The number of operations of the '<em>EExpression List</em>' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int EEXPRESSION_LIST_OPERATION_COUNT = 0;
+
+    /**
      * Returns the meta object for class '{@link org.vgu.se.sql.EStatement <em>EStatement</em>}'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -1346,10 +1742,10 @@ public interface SqlPackage extends EPackage {
     EClass getESelect();
 
     /**
-     * Returns the meta object for the reference '{@link org.vgu.se.sql.ESelect#getSelectBody <em>Select Body</em>}'.
+     * Returns the meta object for the containment reference '{@link org.vgu.se.sql.ESelect#getSelectBody <em>Select Body</em>}'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return the meta object for the reference '<em>Select Body</em>'.
+     * @return the meta object for the containment reference '<em>Select Body</em>'.
      * @see org.vgu.se.sql.ESelect#getSelectBody()
      * @see #getESelect()
      * @generated
@@ -1377,10 +1773,10 @@ public interface SqlPackage extends EPackage {
     EClass getEPlainSelect();
 
     /**
-     * Returns the meta object for the reference '{@link org.vgu.se.sql.EPlainSelect#getDistinct <em>Distinct</em>}'.
+     * Returns the meta object for the containment reference '{@link org.vgu.se.sql.EPlainSelect#getDistinct <em>Distinct</em>}'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return the meta object for the reference '<em>Distinct</em>'.
+     * @return the meta object for the containment reference '<em>Distinct</em>'.
      * @see org.vgu.se.sql.EPlainSelect#getDistinct()
      * @see #getEPlainSelect()
      * @generated
@@ -1388,10 +1784,10 @@ public interface SqlPackage extends EPackage {
     EReference getEPlainSelect_Distinct();
 
     /**
-     * Returns the meta object for the reference list '{@link org.vgu.se.sql.EPlainSelect#getSelectItems <em>Select Items</em>}'.
+     * Returns the meta object for the containment reference list '{@link org.vgu.se.sql.EPlainSelect#getSelectItems <em>Select Items</em>}'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return the meta object for the reference list '<em>Select Items</em>'.
+     * @return the meta object for the containment reference list '<em>Select Items</em>'.
      * @see org.vgu.se.sql.EPlainSelect#getSelectItems()
      * @see #getEPlainSelect()
      * @generated
@@ -1399,10 +1795,10 @@ public interface SqlPackage extends EPackage {
     EReference getEPlainSelect_SelectItems();
 
     /**
-     * Returns the meta object for the reference '{@link org.vgu.se.sql.EPlainSelect#getFromItem <em>From Item</em>}'.
+     * Returns the meta object for the containment reference '{@link org.vgu.se.sql.EPlainSelect#getFromItem <em>From Item</em>}'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return the meta object for the reference '<em>From Item</em>'.
+     * @return the meta object for the containment reference '<em>From Item</em>'.
      * @see org.vgu.se.sql.EPlainSelect#getFromItem()
      * @see #getEPlainSelect()
      * @generated
@@ -1410,10 +1806,10 @@ public interface SqlPackage extends EPackage {
     EReference getEPlainSelect_FromItem();
 
     /**
-     * Returns the meta object for the reference '{@link org.vgu.se.sql.EPlainSelect#getJoins <em>Joins</em>}'.
+     * Returns the meta object for the containment reference list '{@link org.vgu.se.sql.EPlainSelect#getJoins <em>Joins</em>}'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return the meta object for the reference '<em>Joins</em>'.
+     * @return the meta object for the containment reference list '<em>Joins</em>'.
      * @see org.vgu.se.sql.EPlainSelect#getJoins()
      * @see #getEPlainSelect()
      * @generated
@@ -1421,10 +1817,10 @@ public interface SqlPackage extends EPackage {
     EReference getEPlainSelect_Joins();
 
     /**
-     * Returns the meta object for the reference '{@link org.vgu.se.sql.EPlainSelect#getWhere <em>Where</em>}'.
+     * Returns the meta object for the containment reference '{@link org.vgu.se.sql.EPlainSelect#getWhere <em>Where</em>}'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return the meta object for the reference '<em>Where</em>'.
+     * @return the meta object for the containment reference '<em>Where</em>'.
      * @see org.vgu.se.sql.EPlainSelect#getWhere()
      * @see #getEPlainSelect()
      * @generated
@@ -1432,10 +1828,10 @@ public interface SqlPackage extends EPackage {
     EReference getEPlainSelect_Where();
 
     /**
-     * Returns the meta object for the reference '{@link org.vgu.se.sql.EPlainSelect#getGroupBy <em>Group By</em>}'.
+     * Returns the meta object for the containment reference '{@link org.vgu.se.sql.EPlainSelect#getGroupBy <em>Group By</em>}'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return the meta object for the reference '<em>Group By</em>'.
+     * @return the meta object for the containment reference '<em>Group By</em>'.
      * @see org.vgu.se.sql.EPlainSelect#getGroupBy()
      * @see #getEPlainSelect()
      * @generated
@@ -1443,10 +1839,10 @@ public interface SqlPackage extends EPackage {
     EReference getEPlainSelect_GroupBy();
 
     /**
-     * Returns the meta object for the reference '{@link org.vgu.se.sql.EPlainSelect#getHaving <em>Having</em>}'.
+     * Returns the meta object for the containment reference '{@link org.vgu.se.sql.EPlainSelect#getHaving <em>Having</em>}'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return the meta object for the reference '<em>Having</em>'.
+     * @return the meta object for the containment reference '<em>Having</em>'.
      * @see org.vgu.se.sql.EPlainSelect#getHaving()
      * @see #getEPlainSelect()
      * @generated
@@ -1475,10 +1871,10 @@ public interface SqlPackage extends EPackage {
     EAttribute getEDistinct_UseUnique();
 
     /**
-     * Returns the meta object for the reference list '{@link org.vgu.se.sql.EDistinct#getOnSelectItems <em>On Select Items</em>}'.
+     * Returns the meta object for the containment reference list '{@link org.vgu.se.sql.EDistinct#getOnSelectItems <em>On Select Items</em>}'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return the meta object for the reference list '<em>On Select Items</em>'.
+     * @return the meta object for the containment reference list '<em>On Select Items</em>'.
      * @see org.vgu.se.sql.EDistinct#getOnSelectItems()
      * @see #getEDistinct()
      * @generated
@@ -1496,10 +1892,10 @@ public interface SqlPackage extends EPackage {
     EClass getEGroupByElement();
 
     /**
-     * Returns the meta object for the reference list '{@link org.vgu.se.sql.EGroupByElement#getGroupByExpressions <em>Group By Expressions</em>}'.
+     * Returns the meta object for the containment reference list '{@link org.vgu.se.sql.EGroupByElement#getGroupByExpressions <em>Group By Expressions</em>}'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return the meta object for the reference list '<em>Group By Expressions</em>'.
+     * @return the meta object for the containment reference list '<em>Group By Expressions</em>'.
      * @see org.vgu.se.sql.EGroupByElement#getGroupByExpressions()
      * @see #getEGroupByElement()
      * @generated
@@ -1638,10 +2034,10 @@ public interface SqlPackage extends EPackage {
     EAttribute getEJoin_Apply();
 
     /**
-     * Returns the meta object for the reference '{@link org.vgu.se.sql.EJoin#getRightItem <em>Right Item</em>}'.
+     * Returns the meta object for the containment reference '{@link org.vgu.se.sql.EJoin#getRightItem <em>Right Item</em>}'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return the meta object for the reference '<em>Right Item</em>'.
+     * @return the meta object for the containment reference '<em>Right Item</em>'.
      * @see org.vgu.se.sql.EJoin#getRightItem()
      * @see #getEJoin()
      * @generated
@@ -1649,10 +2045,10 @@ public interface SqlPackage extends EPackage {
     EReference getEJoin_RightItem();
 
     /**
-     * Returns the meta object for the reference '{@link org.vgu.se.sql.EJoin#getOnExpression <em>On Expression</em>}'.
+     * Returns the meta object for the containment reference '{@link org.vgu.se.sql.EJoin#getOnExpression <em>On Expression</em>}'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return the meta object for the reference '<em>On Expression</em>'.
+     * @return the meta object for the containment reference '<em>On Expression</em>'.
      * @see org.vgu.se.sql.EJoin#getOnExpression()
      * @see #getEJoin()
      * @generated
@@ -1701,10 +2097,10 @@ public interface SqlPackage extends EPackage {
     EClass getEBinaryExpression();
 
     /**
-     * Returns the meta object for the reference '{@link org.vgu.se.sql.EBinaryExpression#getLeftExpression <em>Left Expression</em>}'.
+     * Returns the meta object for the containment reference '{@link org.vgu.se.sql.EBinaryExpression#getLeftExpression <em>Left Expression</em>}'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return the meta object for the reference '<em>Left Expression</em>'.
+     * @return the meta object for the containment reference '<em>Left Expression</em>'.
      * @see org.vgu.se.sql.EBinaryExpression#getLeftExpression()
      * @see #getEBinaryExpression()
      * @generated
@@ -1712,10 +2108,10 @@ public interface SqlPackage extends EPackage {
     EReference getEBinaryExpression_LeftExpression();
 
     /**
-     * Returns the meta object for the reference '{@link org.vgu.se.sql.EBinaryExpression#getRightExpression <em>Right Expression</em>}'.
+     * Returns the meta object for the containment reference '{@link org.vgu.se.sql.EBinaryExpression#getRightExpression <em>Right Expression</em>}'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return the meta object for the reference '<em>Right Expression</em>'.
+     * @return the meta object for the containment reference '<em>Right Expression</em>'.
      * @see org.vgu.se.sql.EBinaryExpression#getRightExpression()
      * @see #getEBinaryExpression()
      * @generated
@@ -1854,10 +2250,10 @@ public interface SqlPackage extends EPackage {
     EClass getESelectExpressionItem();
 
     /**
-     * Returns the meta object for the reference '{@link org.vgu.se.sql.ESelectExpressionItem#getAlias <em>Alias</em>}'.
+     * Returns the meta object for the containment reference '{@link org.vgu.se.sql.ESelectExpressionItem#getAlias <em>Alias</em>}'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return the meta object for the reference '<em>Alias</em>'.
+     * @return the meta object for the containment reference '<em>Alias</em>'.
      * @see org.vgu.se.sql.ESelectExpressionItem#getAlias()
      * @see #getESelectExpressionItem()
      * @generated
@@ -1865,10 +2261,10 @@ public interface SqlPackage extends EPackage {
     EReference getESelectExpressionItem_Alias();
 
     /**
-     * Returns the meta object for the reference '{@link org.vgu.se.sql.ESelectExpressionItem#getExpression <em>Expression</em>}'.
+     * Returns the meta object for the containment reference '{@link org.vgu.se.sql.ESelectExpressionItem#getExpression <em>Expression</em>}'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return the meta object for the reference '<em>Expression</em>'.
+     * @return the meta object for the containment reference '<em>Expression</em>'.
      * @see org.vgu.se.sql.ESelectExpressionItem#getExpression()
      * @see #getESelectExpressionItem()
      * @generated
@@ -1896,10 +2292,10 @@ public interface SqlPackage extends EPackage {
     EClass getETable();
 
     /**
-     * Returns the meta object for the reference '{@link org.vgu.se.sql.ETable#getAlias <em>Alias</em>}'.
+     * Returns the meta object for the containment reference '{@link org.vgu.se.sql.ETable#getAlias <em>Alias</em>}'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return the meta object for the reference '<em>Alias</em>'.
+     * @return the meta object for the containment reference '<em>Alias</em>'.
      * @see org.vgu.se.sql.ETable#getAlias()
      * @see #getETable()
      * @generated
@@ -1928,10 +2324,10 @@ public interface SqlPackage extends EPackage {
     EClass getESubSelect();
 
     /**
-     * Returns the meta object for the reference '{@link org.vgu.se.sql.ESubSelect#getAlias <em>Alias</em>}'.
+     * Returns the meta object for the containment reference '{@link org.vgu.se.sql.ESubSelect#getAlias <em>Alias</em>}'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return the meta object for the reference '<em>Alias</em>'.
+     * @return the meta object for the containment reference '<em>Alias</em>'.
      * @see org.vgu.se.sql.ESubSelect#getAlias()
      * @see #getESubSelect()
      * @generated
@@ -1939,10 +2335,10 @@ public interface SqlPackage extends EPackage {
     EReference getESubSelect_Alias();
 
     /**
-     * Returns the meta object for the reference '{@link org.vgu.se.sql.ESubSelect#getSelectBody <em>Select Body</em>}'.
+     * Returns the meta object for the containment reference '{@link org.vgu.se.sql.ESubSelect#getSelectBody <em>Select Body</em>}'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return the meta object for the reference '<em>Select Body</em>'.
+     * @return the meta object for the containment reference '<em>Select Body</em>'.
      * @see org.vgu.se.sql.ESubSelect#getSelectBody()
      * @see #getESubSelect()
      * @generated
@@ -1960,15 +2356,281 @@ public interface SqlPackage extends EPackage {
     EClass getENotExpression();
 
     /**
-     * Returns the meta object for the reference '{@link org.vgu.se.sql.ENotExpression#getExpression <em>Expression</em>}'.
+     * Returns the meta object for the containment reference '{@link org.vgu.se.sql.ENotExpression#getExpression <em>Expression</em>}'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return the meta object for the reference '<em>Expression</em>'.
+     * @return the meta object for the containment reference '<em>Expression</em>'.
      * @see org.vgu.se.sql.ENotExpression#getExpression()
      * @see #getENotExpression()
      * @generated
      */
     EReference getENotExpression_Expression();
+
+    /**
+     * Returns the meta object for class '{@link org.vgu.se.sql.ELongValue <em>ELong Value</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for class '<em>ELong Value</em>'.
+     * @see org.vgu.se.sql.ELongValue
+     * @generated
+     */
+    EClass getELongValue();
+
+    /**
+     * Returns the meta object for the attribute '{@link org.vgu.se.sql.ELongValue#getValue <em>Value</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for the attribute '<em>Value</em>'.
+     * @see org.vgu.se.sql.ELongValue#getValue()
+     * @see #getELongValue()
+     * @generated
+     */
+    EAttribute getELongValue_Value();
+
+    /**
+     * Returns the meta object for class '{@link org.vgu.se.sql.ENullValue <em>ENull Value</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for class '<em>ENull Value</em>'.
+     * @see org.vgu.se.sql.ENullValue
+     * @generated
+     */
+    EClass getENullValue();
+
+    /**
+     * Returns the meta object for class '{@link org.vgu.se.sql.EIsNullExpression <em>EIs Null Expression</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for class '<em>EIs Null Expression</em>'.
+     * @see org.vgu.se.sql.EIsNullExpression
+     * @generated
+     */
+    EClass getEIsNullExpression();
+
+    /**
+     * Returns the meta object for the attribute '{@link org.vgu.se.sql.EIsNullExpression#isNot <em>Not</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for the attribute '<em>Not</em>'.
+     * @see org.vgu.se.sql.EIsNullExpression#isNot()
+     * @see #getEIsNullExpression()
+     * @generated
+     */
+    EAttribute getEIsNullExpression_Not();
+
+    /**
+     * Returns the meta object for the containment reference '{@link org.vgu.se.sql.EIsNullExpression#getLeftExpression <em>Left Expression</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for the containment reference '<em>Left Expression</em>'.
+     * @see org.vgu.se.sql.EIsNullExpression#getLeftExpression()
+     * @see #getEIsNullExpression()
+     * @generated
+     */
+    EReference getEIsNullExpression_LeftExpression();
+
+    /**
+     * Returns the meta object for class '{@link org.vgu.se.sql.EFunction <em>EFunction</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for class '<em>EFunction</em>'.
+     * @see org.vgu.se.sql.EFunction
+     * @generated
+     */
+    EClass getEFunction();
+
+    /**
+     * Returns the meta object for the attribute '{@link org.vgu.se.sql.EFunction#getName <em>Name</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for the attribute '<em>Name</em>'.
+     * @see org.vgu.se.sql.EFunction#getName()
+     * @see #getEFunction()
+     * @generated
+     */
+    EAttribute getEFunction_Name();
+
+    /**
+     * Returns the meta object for the attribute '{@link org.vgu.se.sql.EFunction#isAllColumns <em>All Columns</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for the attribute '<em>All Columns</em>'.
+     * @see org.vgu.se.sql.EFunction#isAllColumns()
+     * @see #getEFunction()
+     * @generated
+     */
+    EAttribute getEFunction_AllColumns();
+
+    /**
+     * Returns the meta object for the attribute '{@link org.vgu.se.sql.EFunction#isDistinct <em>Distinct</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for the attribute '<em>Distinct</em>'.
+     * @see org.vgu.se.sql.EFunction#isDistinct()
+     * @see #getEFunction()
+     * @generated
+     */
+    EAttribute getEFunction_Distinct();
+
+    /**
+     * Returns the meta object for the containment reference '{@link org.vgu.se.sql.EFunction#getParameters <em>Parameters</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for the containment reference '<em>Parameters</em>'.
+     * @see org.vgu.se.sql.EFunction#getParameters()
+     * @see #getEFunction()
+     * @generated
+     */
+    EReference getEFunction_Parameters();
+
+    /**
+     * Returns the meta object for class '{@link org.vgu.se.sql.EColumn <em>EColumn</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for class '<em>EColumn</em>'.
+     * @see org.vgu.se.sql.EColumn
+     * @generated
+     */
+    EClass getEColumn();
+
+    /**
+     * Returns the meta object for the attribute '{@link org.vgu.se.sql.EColumn#getColumnName <em>Column Name</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for the attribute '<em>Column Name</em>'.
+     * @see org.vgu.se.sql.EColumn#getColumnName()
+     * @see #getEColumn()
+     * @generated
+     */
+    EAttribute getEColumn_ColumnName();
+
+    /**
+     * Returns the meta object for the containment reference '{@link org.vgu.se.sql.EColumn#getTable <em>Table</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for the containment reference '<em>Table</em>'.
+     * @see org.vgu.se.sql.EColumn#getTable()
+     * @see #getEColumn()
+     * @generated
+     */
+    EReference getEColumn_Table();
+
+    /**
+     * Returns the meta object for class '{@link org.vgu.se.sql.ECaseExpression <em>ECase Expression</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for class '<em>ECase Expression</em>'.
+     * @see org.vgu.se.sql.ECaseExpression
+     * @generated
+     */
+    EClass getECaseExpression();
+
+    /**
+     * Returns the meta object for the containment reference '{@link org.vgu.se.sql.ECaseExpression#getSwitchExpression <em>Switch Expression</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for the containment reference '<em>Switch Expression</em>'.
+     * @see org.vgu.se.sql.ECaseExpression#getSwitchExpression()
+     * @see #getECaseExpression()
+     * @generated
+     */
+    EReference getECaseExpression_SwitchExpression();
+
+    /**
+     * Returns the meta object for the containment reference '{@link org.vgu.se.sql.ECaseExpression#getElseExpression <em>Else Expression</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for the containment reference '<em>Else Expression</em>'.
+     * @see org.vgu.se.sql.ECaseExpression#getElseExpression()
+     * @see #getECaseExpression()
+     * @generated
+     */
+    EReference getECaseExpression_ElseExpression();
+
+    /**
+     * Returns the meta object for the containment reference list '{@link org.vgu.se.sql.ECaseExpression#getWhenClauses <em>When Clauses</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for the containment reference list '<em>When Clauses</em>'.
+     * @see org.vgu.se.sql.ECaseExpression#getWhenClauses()
+     * @see #getECaseExpression()
+     * @generated
+     */
+    EReference getECaseExpression_WhenClauses();
+
+    /**
+     * Returns the meta object for class '{@link org.vgu.se.sql.EWhenClause <em>EWhen Clause</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for class '<em>EWhen Clause</em>'.
+     * @see org.vgu.se.sql.EWhenClause
+     * @generated
+     */
+    EClass getEWhenClause();
+
+    /**
+     * Returns the meta object for the containment reference '{@link org.vgu.se.sql.EWhenClause#getWhenExpression <em>When Expression</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for the containment reference '<em>When Expression</em>'.
+     * @see org.vgu.se.sql.EWhenClause#getWhenExpression()
+     * @see #getEWhenClause()
+     * @generated
+     */
+    EReference getEWhenClause_WhenExpression();
+
+    /**
+     * Returns the meta object for the containment reference '{@link org.vgu.se.sql.EWhenClause#getThenExpression <em>Then Expression</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for the containment reference '<em>Then Expression</em>'.
+     * @see org.vgu.se.sql.EWhenClause#getThenExpression()
+     * @see #getEWhenClause()
+     * @generated
+     */
+    EReference getEWhenClause_ThenExpression();
+
+    /**
+     * Returns the meta object for class '{@link org.vgu.se.sql.EStringValue <em>EString Value</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for class '<em>EString Value</em>'.
+     * @see org.vgu.se.sql.EStringValue
+     * @generated
+     */
+    EClass getEStringValue();
+
+    /**
+     * Returns the meta object for the attribute '{@link org.vgu.se.sql.EStringValue#getValue <em>Value</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for the attribute '<em>Value</em>'.
+     * @see org.vgu.se.sql.EStringValue#getValue()
+     * @see #getEStringValue()
+     * @generated
+     */
+    EAttribute getEStringValue_Value();
+
+    /**
+     * Returns the meta object for class '{@link org.vgu.se.sql.EExpressionList <em>EExpression List</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for class '<em>EExpression List</em>'.
+     * @see org.vgu.se.sql.EExpressionList
+     * @generated
+     */
+    EClass getEExpressionList();
+
+    /**
+     * Returns the meta object for the containment reference list '{@link org.vgu.se.sql.EExpressionList#getExpressions <em>Expressions</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for the containment reference list '<em>Expressions</em>'.
+     * @see org.vgu.se.sql.EExpressionList#getExpressions()
+     * @see #getEExpressionList()
+     * @generated
+     */
+    EReference getEExpressionList_Expressions();
 
     /**
      * Returns the factory that creates the instances of the model.
@@ -2014,7 +2676,7 @@ public interface SqlPackage extends EPackage {
         EClass ESELECT = eINSTANCE.getESelect();
 
         /**
-         * The meta object literal for the '<em><b>Select Body</b></em>' reference feature.
+         * The meta object literal for the '<em><b>Select Body</b></em>' containment reference feature.
          * <!-- begin-user-doc -->
          * <!-- end-user-doc -->
          * @generated
@@ -2042,7 +2704,7 @@ public interface SqlPackage extends EPackage {
         EClass EPLAIN_SELECT = eINSTANCE.getEPlainSelect();
 
         /**
-         * The meta object literal for the '<em><b>Distinct</b></em>' reference feature.
+         * The meta object literal for the '<em><b>Distinct</b></em>' containment reference feature.
          * <!-- begin-user-doc -->
          * <!-- end-user-doc -->
          * @generated
@@ -2051,7 +2713,7 @@ public interface SqlPackage extends EPackage {
             .getEPlainSelect_Distinct();
 
         /**
-         * The meta object literal for the '<em><b>Select Items</b></em>' reference list feature.
+         * The meta object literal for the '<em><b>Select Items</b></em>' containment reference list feature.
          * <!-- begin-user-doc -->
          * <!-- end-user-doc -->
          * @generated
@@ -2060,7 +2722,7 @@ public interface SqlPackage extends EPackage {
             .getEPlainSelect_SelectItems();
 
         /**
-         * The meta object literal for the '<em><b>From Item</b></em>' reference feature.
+         * The meta object literal for the '<em><b>From Item</b></em>' containment reference feature.
          * <!-- begin-user-doc -->
          * <!-- end-user-doc -->
          * @generated
@@ -2069,7 +2731,7 @@ public interface SqlPackage extends EPackage {
             .getEPlainSelect_FromItem();
 
         /**
-         * The meta object literal for the '<em><b>Joins</b></em>' reference feature.
+         * The meta object literal for the '<em><b>Joins</b></em>' containment reference list feature.
          * <!-- begin-user-doc -->
          * <!-- end-user-doc -->
          * @generated
@@ -2077,7 +2739,7 @@ public interface SqlPackage extends EPackage {
         EReference EPLAIN_SELECT__JOINS = eINSTANCE.getEPlainSelect_Joins();
 
         /**
-         * The meta object literal for the '<em><b>Where</b></em>' reference feature.
+         * The meta object literal for the '<em><b>Where</b></em>' containment reference feature.
          * <!-- begin-user-doc -->
          * <!-- end-user-doc -->
          * @generated
@@ -2085,7 +2747,7 @@ public interface SqlPackage extends EPackage {
         EReference EPLAIN_SELECT__WHERE = eINSTANCE.getEPlainSelect_Where();
 
         /**
-         * The meta object literal for the '<em><b>Group By</b></em>' reference feature.
+         * The meta object literal for the '<em><b>Group By</b></em>' containment reference feature.
          * <!-- begin-user-doc -->
          * <!-- end-user-doc -->
          * @generated
@@ -2094,7 +2756,7 @@ public interface SqlPackage extends EPackage {
             .getEPlainSelect_GroupBy();
 
         /**
-         * The meta object literal for the '<em><b>Having</b></em>' reference feature.
+         * The meta object literal for the '<em><b>Having</b></em>' containment reference feature.
          * <!-- begin-user-doc -->
          * <!-- end-user-doc -->
          * @generated
@@ -2120,7 +2782,7 @@ public interface SqlPackage extends EPackage {
         EAttribute EDISTINCT__USE_UNIQUE = eINSTANCE.getEDistinct_UseUnique();
 
         /**
-         * The meta object literal for the '<em><b>On Select Items</b></em>' reference list feature.
+         * The meta object literal for the '<em><b>On Select Items</b></em>' containment reference list feature.
          * <!-- begin-user-doc -->
          * <!-- end-user-doc -->
          * @generated
@@ -2139,7 +2801,7 @@ public interface SqlPackage extends EPackage {
         EClass EGROUP_BY_ELEMENT = eINSTANCE.getEGroupByElement();
 
         /**
-         * The meta object literal for the '<em><b>Group By Expressions</b></em>' reference list feature.
+         * The meta object literal for the '<em><b>Group By Expressions</b></em>' containment reference list feature.
          * <!-- begin-user-doc -->
          * <!-- end-user-doc -->
          * @generated
@@ -2246,7 +2908,7 @@ public interface SqlPackage extends EPackage {
         EAttribute EJOIN__APPLY = eINSTANCE.getEJoin_Apply();
 
         /**
-         * The meta object literal for the '<em><b>Right Item</b></em>' reference feature.
+         * The meta object literal for the '<em><b>Right Item</b></em>' containment reference feature.
          * <!-- begin-user-doc -->
          * <!-- end-user-doc -->
          * @generated
@@ -2254,7 +2916,7 @@ public interface SqlPackage extends EPackage {
         EReference EJOIN__RIGHT_ITEM = eINSTANCE.getEJoin_RightItem();
 
         /**
-         * The meta object literal for the '<em><b>On Expression</b></em>' reference feature.
+         * The meta object literal for the '<em><b>On Expression</b></em>' containment reference feature.
          * <!-- begin-user-doc -->
          * <!-- end-user-doc -->
          * @generated
@@ -2300,7 +2962,7 @@ public interface SqlPackage extends EPackage {
         EClass EBINARY_EXPRESSION = eINSTANCE.getEBinaryExpression();
 
         /**
-         * The meta object literal for the '<em><b>Left Expression</b></em>' reference feature.
+         * The meta object literal for the '<em><b>Left Expression</b></em>' containment reference feature.
          * <!-- begin-user-doc -->
          * <!-- end-user-doc -->
          * @generated
@@ -2309,7 +2971,7 @@ public interface SqlPackage extends EPackage {
             .getEBinaryExpression_LeftExpression();
 
         /**
-         * The meta object literal for the '<em><b>Right Expression</b></em>' reference feature.
+         * The meta object literal for the '<em><b>Right Expression</b></em>' containment reference feature.
          * <!-- begin-user-doc -->
          * <!-- end-user-doc -->
          * @generated
@@ -2447,7 +3109,7 @@ public interface SqlPackage extends EPackage {
         EClass ESELECT_EXPRESSION_ITEM = eINSTANCE.getESelectExpressionItem();
 
         /**
-         * The meta object literal for the '<em><b>Alias</b></em>' reference feature.
+         * The meta object literal for the '<em><b>Alias</b></em>' containment reference feature.
          * <!-- begin-user-doc -->
          * <!-- end-user-doc -->
          * @generated
@@ -2456,7 +3118,7 @@ public interface SqlPackage extends EPackage {
             .getESelectExpressionItem_Alias();
 
         /**
-         * The meta object literal for the '<em><b>Expression</b></em>' reference feature.
+         * The meta object literal for the '<em><b>Expression</b></em>' containment reference feature.
          * <!-- begin-user-doc -->
          * <!-- end-user-doc -->
          * @generated
@@ -2485,7 +3147,7 @@ public interface SqlPackage extends EPackage {
         EClass ETABLE = eINSTANCE.getETable();
 
         /**
-         * The meta object literal for the '<em><b>Alias</b></em>' reference feature.
+         * The meta object literal for the '<em><b>Alias</b></em>' containment reference feature.
          * <!-- begin-user-doc -->
          * <!-- end-user-doc -->
          * @generated
@@ -2511,7 +3173,7 @@ public interface SqlPackage extends EPackage {
         EClass ESUB_SELECT = eINSTANCE.getESubSelect();
 
         /**
-         * The meta object literal for the '<em><b>Alias</b></em>' reference feature.
+         * The meta object literal for the '<em><b>Alias</b></em>' containment reference feature.
          * <!-- begin-user-doc -->
          * <!-- end-user-doc -->
          * @generated
@@ -2519,7 +3181,7 @@ public interface SqlPackage extends EPackage {
         EReference ESUB_SELECT__ALIAS = eINSTANCE.getESubSelect_Alias();
 
         /**
-         * The meta object literal for the '<em><b>Select Body</b></em>' reference feature.
+         * The meta object literal for the '<em><b>Select Body</b></em>' containment reference feature.
          * <!-- begin-user-doc -->
          * <!-- end-user-doc -->
          * @generated
@@ -2538,13 +3200,239 @@ public interface SqlPackage extends EPackage {
         EClass ENOT_EXPRESSION = eINSTANCE.getENotExpression();
 
         /**
-         * The meta object literal for the '<em><b>Expression</b></em>' reference feature.
+         * The meta object literal for the '<em><b>Expression</b></em>' containment reference feature.
          * <!-- begin-user-doc -->
          * <!-- end-user-doc -->
          * @generated
          */
         EReference ENOT_EXPRESSION__EXPRESSION = eINSTANCE
             .getENotExpression_Expression();
+
+        /**
+         * The meta object literal for the '{@link org.vgu.se.sql.impl.ELongValueImpl <em>ELong Value</em>}' class.
+         * <!-- begin-user-doc -->
+         * <!-- end-user-doc -->
+         * @see org.vgu.se.sql.impl.ELongValueImpl
+         * @see org.vgu.se.sql.impl.SqlPackageImpl#getELongValue()
+         * @generated
+         */
+        EClass ELONG_VALUE = eINSTANCE.getELongValue();
+
+        /**
+         * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
+         * <!-- begin-user-doc -->
+         * <!-- end-user-doc -->
+         * @generated
+         */
+        EAttribute ELONG_VALUE__VALUE = eINSTANCE.getELongValue_Value();
+
+        /**
+         * The meta object literal for the '{@link org.vgu.se.sql.impl.ENullValueImpl <em>ENull Value</em>}' class.
+         * <!-- begin-user-doc -->
+         * <!-- end-user-doc -->
+         * @see org.vgu.se.sql.impl.ENullValueImpl
+         * @see org.vgu.se.sql.impl.SqlPackageImpl#getENullValue()
+         * @generated
+         */
+        EClass ENULL_VALUE = eINSTANCE.getENullValue();
+
+        /**
+         * The meta object literal for the '{@link org.vgu.se.sql.impl.EIsNullExpressionImpl <em>EIs Null Expression</em>}' class.
+         * <!-- begin-user-doc -->
+         * <!-- end-user-doc -->
+         * @see org.vgu.se.sql.impl.EIsNullExpressionImpl
+         * @see org.vgu.se.sql.impl.SqlPackageImpl#getEIsNullExpression()
+         * @generated
+         */
+        EClass EIS_NULL_EXPRESSION = eINSTANCE.getEIsNullExpression();
+
+        /**
+         * The meta object literal for the '<em><b>Not</b></em>' attribute feature.
+         * <!-- begin-user-doc -->
+         * <!-- end-user-doc -->
+         * @generated
+         */
+        EAttribute EIS_NULL_EXPRESSION__NOT = eINSTANCE
+            .getEIsNullExpression_Not();
+
+        /**
+         * The meta object literal for the '<em><b>Left Expression</b></em>' containment reference feature.
+         * <!-- begin-user-doc -->
+         * <!-- end-user-doc -->
+         * @generated
+         */
+        EReference EIS_NULL_EXPRESSION__LEFT_EXPRESSION = eINSTANCE
+            .getEIsNullExpression_LeftExpression();
+
+        /**
+         * The meta object literal for the '{@link org.vgu.se.sql.impl.EFunctionImpl <em>EFunction</em>}' class.
+         * <!-- begin-user-doc -->
+         * <!-- end-user-doc -->
+         * @see org.vgu.se.sql.impl.EFunctionImpl
+         * @see org.vgu.se.sql.impl.SqlPackageImpl#getEFunction()
+         * @generated
+         */
+        EClass EFUNCTION = eINSTANCE.getEFunction();
+
+        /**
+         * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+         * <!-- begin-user-doc -->
+         * <!-- end-user-doc -->
+         * @generated
+         */
+        EAttribute EFUNCTION__NAME = eINSTANCE.getEFunction_Name();
+
+        /**
+         * The meta object literal for the '<em><b>All Columns</b></em>' attribute feature.
+         * <!-- begin-user-doc -->
+         * <!-- end-user-doc -->
+         * @generated
+         */
+        EAttribute EFUNCTION__ALL_COLUMNS = eINSTANCE.getEFunction_AllColumns();
+
+        /**
+         * The meta object literal for the '<em><b>Distinct</b></em>' attribute feature.
+         * <!-- begin-user-doc -->
+         * <!-- end-user-doc -->
+         * @generated
+         */
+        EAttribute EFUNCTION__DISTINCT = eINSTANCE.getEFunction_Distinct();
+
+        /**
+         * The meta object literal for the '<em><b>Parameters</b></em>' containment reference feature.
+         * <!-- begin-user-doc -->
+         * <!-- end-user-doc -->
+         * @generated
+         */
+        EReference EFUNCTION__PARAMETERS = eINSTANCE.getEFunction_Parameters();
+
+        /**
+         * The meta object literal for the '{@link org.vgu.se.sql.impl.EColumnImpl <em>EColumn</em>}' class.
+         * <!-- begin-user-doc -->
+         * <!-- end-user-doc -->
+         * @see org.vgu.se.sql.impl.EColumnImpl
+         * @see org.vgu.se.sql.impl.SqlPackageImpl#getEColumn()
+         * @generated
+         */
+        EClass ECOLUMN = eINSTANCE.getEColumn();
+
+        /**
+         * The meta object literal for the '<em><b>Column Name</b></em>' attribute feature.
+         * <!-- begin-user-doc -->
+         * <!-- end-user-doc -->
+         * @generated
+         */
+        EAttribute ECOLUMN__COLUMN_NAME = eINSTANCE.getEColumn_ColumnName();
+
+        /**
+         * The meta object literal for the '<em><b>Table</b></em>' containment reference feature.
+         * <!-- begin-user-doc -->
+         * <!-- end-user-doc -->
+         * @generated
+         */
+        EReference ECOLUMN__TABLE = eINSTANCE.getEColumn_Table();
+
+        /**
+         * The meta object literal for the '{@link org.vgu.se.sql.impl.ECaseExpressionImpl <em>ECase Expression</em>}' class.
+         * <!-- begin-user-doc -->
+         * <!-- end-user-doc -->
+         * @see org.vgu.se.sql.impl.ECaseExpressionImpl
+         * @see org.vgu.se.sql.impl.SqlPackageImpl#getECaseExpression()
+         * @generated
+         */
+        EClass ECASE_EXPRESSION = eINSTANCE.getECaseExpression();
+
+        /**
+         * The meta object literal for the '<em><b>Switch Expression</b></em>' containment reference feature.
+         * <!-- begin-user-doc -->
+         * <!-- end-user-doc -->
+         * @generated
+         */
+        EReference ECASE_EXPRESSION__SWITCH_EXPRESSION = eINSTANCE
+            .getECaseExpression_SwitchExpression();
+
+        /**
+         * The meta object literal for the '<em><b>Else Expression</b></em>' containment reference feature.
+         * <!-- begin-user-doc -->
+         * <!-- end-user-doc -->
+         * @generated
+         */
+        EReference ECASE_EXPRESSION__ELSE_EXPRESSION = eINSTANCE
+            .getECaseExpression_ElseExpression();
+
+        /**
+         * The meta object literal for the '<em><b>When Clauses</b></em>' containment reference list feature.
+         * <!-- begin-user-doc -->
+         * <!-- end-user-doc -->
+         * @generated
+         */
+        EReference ECASE_EXPRESSION__WHEN_CLAUSES = eINSTANCE
+            .getECaseExpression_WhenClauses();
+
+        /**
+         * The meta object literal for the '{@link org.vgu.se.sql.impl.EWhenClauseImpl <em>EWhen Clause</em>}' class.
+         * <!-- begin-user-doc -->
+         * <!-- end-user-doc -->
+         * @see org.vgu.se.sql.impl.EWhenClauseImpl
+         * @see org.vgu.se.sql.impl.SqlPackageImpl#getEWhenClause()
+         * @generated
+         */
+        EClass EWHEN_CLAUSE = eINSTANCE.getEWhenClause();
+
+        /**
+         * The meta object literal for the '<em><b>When Expression</b></em>' containment reference feature.
+         * <!-- begin-user-doc -->
+         * <!-- end-user-doc -->
+         * @generated
+         */
+        EReference EWHEN_CLAUSE__WHEN_EXPRESSION = eINSTANCE
+            .getEWhenClause_WhenExpression();
+
+        /**
+         * The meta object literal for the '<em><b>Then Expression</b></em>' containment reference feature.
+         * <!-- begin-user-doc -->
+         * <!-- end-user-doc -->
+         * @generated
+         */
+        EReference EWHEN_CLAUSE__THEN_EXPRESSION = eINSTANCE
+            .getEWhenClause_ThenExpression();
+
+        /**
+         * The meta object literal for the '{@link org.vgu.se.sql.impl.EStringValueImpl <em>EString Value</em>}' class.
+         * <!-- begin-user-doc -->
+         * <!-- end-user-doc -->
+         * @see org.vgu.se.sql.impl.EStringValueImpl
+         * @see org.vgu.se.sql.impl.SqlPackageImpl#getEStringValue()
+         * @generated
+         */
+        EClass ESTRING_VALUE = eINSTANCE.getEStringValue();
+
+        /**
+         * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
+         * <!-- begin-user-doc -->
+         * <!-- end-user-doc -->
+         * @generated
+         */
+        EAttribute ESTRING_VALUE__VALUE = eINSTANCE.getEStringValue_Value();
+
+        /**
+         * The meta object literal for the '{@link org.vgu.se.sql.impl.EExpressionListImpl <em>EExpression List</em>}' class.
+         * <!-- begin-user-doc -->
+         * <!-- end-user-doc -->
+         * @see org.vgu.se.sql.impl.EExpressionListImpl
+         * @see org.vgu.se.sql.impl.SqlPackageImpl#getEExpressionList()
+         * @generated
+         */
+        EClass EEXPRESSION_LIST = eINSTANCE.getEExpressionList();
+
+        /**
+         * The meta object literal for the '<em><b>Expressions</b></em>' containment reference list feature.
+         * <!-- begin-user-doc -->
+         * <!-- end-user-doc -->
+         * @generated
+         */
+        EReference EEXPRESSION_LIST__EXPRESSIONS = eINSTANCE
+            .getEExpressionList_Expressions();
 
     }
 

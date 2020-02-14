@@ -6,15 +6,17 @@ import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
 
+import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
-import org.eclipse.emf.ecore.util.EObjectResolvingEList;
-
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.InternalEList;
 import org.vgu.se.sql.EDistinct;
 import org.vgu.se.sql.ESelectItem;
 import org.vgu.se.sql.SqlPackage;
@@ -56,7 +58,7 @@ public class EDistinctImpl extends MinimalEObjectImpl.Container
     protected boolean useUnique = USE_UNIQUE_EDEFAULT;
 
     /**
-     * The cached value of the '{@link #getOnSelectItems() <em>On Select Items</em>}' reference list.
+     * The cached value of the '{@link #getOnSelectItems() <em>On Select Items</em>}' containment reference list.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @see #getOnSelectItems()
@@ -116,10 +118,26 @@ public class EDistinctImpl extends MinimalEObjectImpl.Container
     @Override
     public EList<ESelectItem> getOnSelectItems() {
         if (onSelectItems == null) {
-            onSelectItems = new EObjectResolvingEList<ESelectItem>(
+            onSelectItems = new EObjectContainmentEList<ESelectItem>(
                 ESelectItem.class, this, SqlPackage.EDISTINCT__ON_SELECT_ITEMS);
         }
         return onSelectItems;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public NotificationChain eInverseRemove(InternalEObject otherEnd,
+        int featureID, NotificationChain msgs) {
+        switch (featureID) {
+        case SqlPackage.EDISTINCT__ON_SELECT_ITEMS:
+            return ((InternalEList<?>) getOnSelectItems()).basicRemove(otherEnd,
+                msgs);
+        }
+        return super.eInverseRemove(otherEnd, featureID, msgs);
     }
 
     /**
