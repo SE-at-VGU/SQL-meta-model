@@ -19,7 +19,6 @@ limitations under the License.
 package org.vgu.se.sql.parser;
 
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.List;
 
 import org.vgu.se.sql.EAlias;
@@ -124,15 +123,13 @@ public class J2XMI {
         PlainSelect plainSelect = new PlainSelect();
         plainSelect
             .setDistinct(transformDistinct(plainSelectXMI.getDistinct()));
-        plainSelect.getSelectItems()
-            .addAll(transformSelectItems(plainSelectXMI.getSelectItems()));
-        plainSelect.getJoins()
-            .addAll(transformJoins(plainSelectXMI.getJoins()));
+        plainSelect.setSelectItems(transformSelectItems(plainSelectXMI.getSelectItems()));
+        plainSelect.setJoins(transformJoins(plainSelectXMI.getJoins()));
         plainSelect
             .setFromItem(transformFromItem(plainSelectXMI.getFromItem()));
         plainSelect.setWhere(transformExpression(plainSelectXMI.getWhere()));
-        plainSelect
-            .setGroupByElement(transformGroupByElement(plainSelectXMI.getGroupBy()));
+        plainSelect.setGroupByElement(
+            transformGroupByElement(plainSelectXMI.getGroupBy()));
         plainSelect.setHaving(transformExpression(plainSelectXMI.getHaving()));
         return plainSelect;
     }
@@ -142,12 +139,11 @@ public class J2XMI {
         if (groupByXMI == null)
             return null;
         GroupByElement groupByElement = new GroupByElement();
-        groupByElement.getGroupByExpressions()
-            .addAll(transformExpressions(groupByXMI.getGroupByExpressions()));
+        groupByElement.setGroupByExpressions(transformExpressions(groupByXMI.getGroupByExpressions()));
         return groupByElement;
     }
 
-    private static Collection<? extends Join> transformJoins(
+    private static List<Join> transformJoins(
         List<EJoin> joinsXMI) {
         List<Join> joins = new ArrayList<Join>();
         for (EJoin joinXMI : joinsXMI) {
@@ -185,7 +181,7 @@ public class J2XMI {
         }
     }
 
-    private static Collection<? extends SelectItem> transformSelectItems(
+    private static List<SelectItem> transformSelectItems(
         List<ESelectItem> selectItemsXMI) {
         List<SelectItem> selectItems = new ArrayList<SelectItem>();
         for (ESelectItem selectItemXMI : selectItemsXMI) {
@@ -259,12 +255,11 @@ public class J2XMI {
             transformExpression(caseExpressionXMI.getSwitchExpression()));
         caseExpression.setElseExpression(
             transformExpression(caseExpressionXMI.getElseExpression()));
-        caseExpression.getWhenClauses()
-            .addAll(transformWhenClauses(caseExpressionXMI.getWhenClauses()));
+        caseExpression.setWhenClauses(transformWhenClauses(caseExpressionXMI.getWhenClauses()));
         return caseExpression;
     }
 
-    private static Collection<? extends WhenClause> transformWhenClauses(
+    private static List<WhenClause> transformWhenClauses(
         List<EWhenClause> whenClausesXMI) {
         List<WhenClause> whenClauses = new ArrayList<WhenClause>();
         for (EWhenClause whenClauseXMI : whenClausesXMI) {
@@ -320,12 +315,11 @@ public class J2XMI {
         if (expressionListXMI == null)
             return null;
         ExpressionList expressionList = new ExpressionList();
-        expressionList.getExpressions()
-            .addAll(transformExpressions(expressionListXMI.getExpressions()));
+        expressionList.setExpressions(transformExpressions(expressionListXMI.getExpressions()));
         return expressionList;
     }
 
-    private static Collection<? extends Expression> transformExpressions(
+    private static List<Expression> transformExpressions(
         List<EExpression> expressionsXMI) {
         List<Expression> expressions = new ArrayList<Expression>();
         for (EExpression expressionXMI : expressionsXMI) {
@@ -430,7 +424,8 @@ public class J2XMI {
         return greaterThanEquals;
     }
 
-    private static GreaterThan transformGreaterThan(EGreaterThan greaterThanXMI) {
+    private static GreaterThan transformGreaterThan(
+        EGreaterThan greaterThanXMI) {
         if (greaterThanXMI == null)
             return null;
         GreaterThan greaterThan = new GreaterThan();
@@ -490,27 +485,25 @@ public class J2XMI {
         return andExpression;
     }
 
-    private static StringValue transformStringValue(EStringValue stringValueXMI) {
+    private static StringValue transformStringValue(
+        EStringValue stringValueXMI) {
         if (stringValueXMI == null)
             return null;
-        StringValue stringValue = new StringValue(null);
-        stringValue.setValue(stringValueXMI.getValue());
+        StringValue stringValue = new StringValue(stringValueXMI.getValue());
         return stringValue;
     }
 
     private static LongValue transformLongValue(ELongValue longValueXMI) {
         if (longValueXMI == null)
             return null;
-        LongValue longValue = new LongValue(null);
-        longValue.setValue(longValueXMI.getValue());
+        LongValue longValue = new LongValue(longValueXMI.getValue());
         return longValue;
     }
 
     private static Alias transformAlias(EAlias aliasXMI) {
         if (aliasXMI == null)
             return null;
-        Alias alias = new Alias(null);
-        alias.setName(aliasXMI.getName());
+        Alias alias = new Alias(aliasXMI.getName());
         return alias;
     }
 
@@ -519,8 +512,7 @@ public class J2XMI {
             return null;
         Distinct distinct = new Distinct();
         distinct.setUseUnique(distinctXMI.isUseUnique());
-        distinct.getOnSelectItems()
-            .addAll(transformSelectItems(distinctXMI.getOnSelectItems()));
+        distinct.setOnSelectItems(transformSelectItems(distinctXMI.getOnSelectItems()));
         return distinct;
     }
 

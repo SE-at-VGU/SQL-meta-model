@@ -35,12 +35,12 @@ import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.xmi.impl.XMIResourceFactoryImpl;
 import org.vgu.se.sql.EStatement;
 import org.vgu.se.sql.SqlFactory;
+import org.vgu.se.sql.SqlPackage;
 
 import net.sf.jsqlparser.statement.Statement;
 
 public class SQLParser {
     private static SqlFactory factory = SqlFactory.eINSTANCE;
-    final static String dirPath = System.getProperty("java.io.tmpdir");
 
     public static Statement transform(EStatement statementXMI) {
         return J2XMI.transform(statementXMI);
@@ -59,8 +59,7 @@ public class SQLParser {
         factory.eClass();
 
         ResourceSet resSet = new ResourceSetImpl();
-        Resource resource = resSet.createResource(URI.createFileURI(
-            dirPath.concat("//").concat(fileName).concat(".xmi")));
+        Resource resource = resSet.createResource(URI.createFileURI(fileName));
         resource.getContents().add(statement);
         resource.save(Collections.EMPTY_MAP);
 
@@ -69,9 +68,9 @@ public class SQLParser {
 
     public static String outputEStatementAsXMI(EStatement statement)
         throws IOException {
-        saveEStatement("dummy", statement);
-        InputStream is = new FileInputStream(
-            dirPath.concat("//").concat("dummy.xmi"));
+        final String dirPath = System.getProperty("java.io.tmpdir");
+        saveEStatement(dirPath.concat("dummy.xmi"), statement);
+        InputStream is = new FileInputStream(dirPath.concat("dummy.xmi"));
         @SuppressWarnings("resource")
         BufferedReader buf = new BufferedReader(new InputStreamReader(is));
 
@@ -79,17 +78,18 @@ public class SQLParser {
         StringBuilder sb = new StringBuilder();
 
         while ((line = buf.readLine()) != null) {
-            sb.append(line).append(" ");
+            sb.append(line.trim()).append(" ");
         }
 
         String fileAsString = sb.toString();
         return fileAsString;
     }
 
-    public static EStatement loadEStatement(String filePathWithoutSuffix)
+    public static EStatement loadEStatement(String filePath)
         throws IOException {
         // Initialize the model
         factory.eClass();
+        SqlPackage sqlPackage = SqlPackage.eINSTANCE;
 
         Resource.Factory.Registry reg = Resource.Factory.Registry.INSTANCE;
         Map<String, Object> m = reg.getExtensionToFactoryMap();
@@ -99,8 +99,7 @@ public class SQLParser {
         ResourceSet resSet = new ResourceSetImpl();
 
         // Get the resource
-        Resource resource = resSet.getResource(URI.createFileURI(
-            dirPath.concat("//").concat(filePathWithoutSuffix).concat(".xmi")),
+        Resource resource = resSet.getResource(URI.createFileURI(filePath),
             true);
 
         // This is for loading proxy resources

@@ -16,7 +16,6 @@ limitations under the License.
 @author: ngpbh
 ***************************************************************************/
 
-
 package org.vgu.se.sql.parser;
 
 import java.io.IOException;
@@ -29,10 +28,13 @@ import net.sf.jsqlparser.statement.Statement;
 
 public class Main {
 
-    public static void main(String[] args) throws IOException, JSQLParserException {
-        Statement stm = CCJSqlParserUtil.parseStatements("SELECT 1 as val, 'hoang' as res").getStatements().get(0);
+    public static void main(String[] args)
+        throws IOException, JSQLParserException {
+        Statement stm = CCJSqlParserUtil.parseStatements("SELECT 1 as val")
+            .getStatements().get(0);
         EStatement estm = SQLParser.transform(stm);
-        SQLParser.saveEStatement("test", estm);
+//        SQLParser.saveEStatement("test.xmi", estm);
+        System.out.println(SQLParser.outputEStatementAsXMI(estm));
     }
 
 }
