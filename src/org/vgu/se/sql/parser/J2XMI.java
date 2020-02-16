@@ -194,7 +194,7 @@ public class J2XMI {
     private static SelectItem transformSelectItem(ESelectItem selectItemXMI) {
         if (selectItemXMI == null)
             return null;
-        if (selectItemXMI instanceof AllColumns) {
+        if (selectItemXMI instanceof EAllColumns) {
             return transformAllColumns((EAllColumns) selectItemXMI);
         } else {
             return transformSelectExpressionItem(

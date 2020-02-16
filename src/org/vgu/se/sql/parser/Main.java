@@ -30,11 +30,10 @@ public class Main {
 
     public static void main(String[] args)
         throws IOException, JSQLParserException {
-        Statement stm = CCJSqlParserUtil.parseStatements("SELECT 1 as val")
+        Statement stm = CCJSqlParserUtil.parseStatements("SELECT * FROM Car")
             .getStatements().get(0);
         EStatement estm = SQLParser.transform(stm);
 //        SQLParser.saveEStatement("test.xmi", estm);
         System.out.println(SQLParser.outputEStatementAsXMI(estm));
     }
-
 }
